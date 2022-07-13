@@ -465,6 +465,11 @@
 
 <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="nv">pipeline</span><span class="o">.</span><span class="py">fit</span><span class="o">(</span><span class="n">data</span><span class="o">).</span><span class="py">transform</span><span class="o">(</span><span class="n">data</span><span class="o">)</span>
 </code></pre></div>  </div>
+
+  <div class="language-python nlu-block highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nlu</span>
+<span class="n">nlu</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"en.med_ner.drugprot_clinical"</span><span class="p">).</span><span class="n">predict</span><span class="p">(</span><span class="s">"""Anabolic effects of clenbuterol on skeletal muscle are mediated by beta 2-adrenoceptor activation."""</span><span class="p">)</span>
+</code></pre></div>  </div>
+
 </div>
 
 <h2 id="results">Results</h2>
@@ -526,16 +531,13 @@
 
 <h2 id="benchmarking">Benchmarking</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>           entity      tp     fp     fn   total  precision  recall      f1
-GENE_AND_CHEMICAL   786.0  171.0  143.0   929.0     0.8213  0.8461  0.8335
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            label      tp     fp     fn   total  precision  recall   f1
+GENE_AND_CHEMICAL   786.0  171.0  143.0   929.0     0.8213  0.8461   0.8335
          CHEMICAL  8228.0  779.0  575.0  8803.0     0.9135  0.9347   0.924
-             GENE  7176.0  822.0  652.0  7828.0     0.8972  0.9167  0.9069
-            macro      -       -      -       -       -        -    0.88811683
-            micro      -       -      -       -       -        -    0.91156048
+             GENE  7176.0  822.0  652.0  7828.0     0.8972  0.9167   0.9069
+            macro      -       -      -       -       -        -     0.88811683
+            micro      -       -      -       -       -        -     0.91156048
 </code></pre></div></div>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5NTA2OTkyNV19
--->
 </div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2021-12-20T00:00:00+00:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --></footer>

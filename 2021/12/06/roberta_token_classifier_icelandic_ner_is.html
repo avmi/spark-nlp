@@ -432,6 +432,7 @@
   <div class="top_tab_li">   
     <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button><button class="tab-li code-selector-un-active nlu-button">NLU</button>
 </div>
+
   <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">documentAssembler</span> <span class="o">=</span> <span class="n">DocumentAssembler</span><span class="p">()</span>\
       <span class="p">.</span><span class="n">setInputCol</span><span class="p">(</span><span class="s">"text"</span><span class="p">)</span>\
       <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"document"</span><span class="p">)</span>
@@ -486,6 +487,11 @@
 
 <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="nv">pipeline</span><span class="o">.</span><span class="py">fit</span><span class="o">(</span><span class="n">example</span><span class="o">).</span><span class="py">transform</span><span class="o">(</span><span class="n">example</span><span class="o">)</span>
 </code></pre></div>  </div>
+
+  <div class="language-python nlu-block highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nlu</span>
+<span class="n">nlu</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"is.ner"</span><span class="p">).</span><span class="n">predict</span><span class="p">(</span><span class="s">"""Ég heiti Peter Fergusson. Ég hef búið í New York síðan í október 2011 og unnið hjá Tesla Motor og þénað 100K $ á ári."""</span><span class="p">)</span>
+</code></pre></div>  </div>
+
 </div>
 
 <h2 id="results">Results</h2>
@@ -550,8 +556,9 @@
 
 <h2 id="benchmarking">Benchmarking</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Macro F1-Score : 0.957209
-Micro F1-Score : 0.951866
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         label      score
+Macro-F1-Score   0.957209
+Micro-F1-Score   0.951866
 </code></pre></div></div>
 </div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2021-12-06T00:00:00+00:00"><!-- start custom article footer snippet -->
 

@@ -499,6 +499,13 @@ Antonio Pérez Juan, nacido en Cadiz, España. Aún no estaba vacunado, se infec
 
 <span class="k">val</span> <span class="nv">results</span> <span class="k">=</span> <span class="nv">pipeline</span><span class="o">.</span><span class="py">fit</span><span class="o">(</span><span class="n">data</span><span class="o">).</span><span class="py">transform</span><span class="o">(</span><span class="n">data</span><span class="o">)</span>
 </code></pre></div>  </div>
+
+  <div class="language-python nlu-block highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nlu</span>
+<span class="n">nlu</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"es.med_ner.deid.generic"</span><span class="p">).</span><span class="n">predict</span><span class="p">(</span><span class="s">"""
+Antonio Pérez Juan, nacido en Cadiz, España. Aún no estaba vacunado, se infectó con Covid-19 el dia 14/03/2020 y tuvo que ir al Hospital. Fue tratado con anticuerpos monoclonales en la Clinica San Carlos.
+"""</span><span class="p">)</span>
+</code></pre></div>  </div>
+
 </div>
 
 <h2 id="results">Results</h2>
@@ -601,7 +608,7 @@ Antonio Pérez Juan, nacido en Cadiz, España. Aún no estaba vacunado, se infec
 
 <h2 id="benchmarking">Benchmarking</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    entity      tp     fp     fn   total  precision  recall      f1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     label      tp     fp     fn   total  precision  recall      f1
    CONTACT   166.0    9.0    8.0   174.0     0.9486   0.954  0.9513
       NAME  2879.0  195.0  191.0  3070.0     0.9366  0.9378  0.9372
       DATE  1839.0   29.0   18.0  1857.0     0.9845  0.9903  0.9874
@@ -612,9 +619,6 @@ PROFESSION   236.0   49.0  168.0   404.0     0.8281  0.5842  0.6851
      macro     -      -      -       -         -       -     0.891749
      micro     -      -      -       -         -       -     0.909897
 </code></pre></div></div>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2MDY5Mjc5N119
--->
 </div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2022-01-18T00:00:00+00:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --></footer>

@@ -470,6 +470,11 @@
 
 <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="nv">light_model</span><span class="o">.</span><span class="py">fullAnnotate</span><span class="o">(</span><span class="nc">Array</span><span class="o">(</span><span class="s">"Zita 200 mg"</span><span class="o">,</span> <span class="s">"coumadin 5 mg"</span><span class="o">,</span> <span class="s">"avandia 4 mg"</span><span class="o">))</span>
 </code></pre></div>  </div>
+
+  <div class="language-python nlu-block highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nlu</span>
+<span class="n">nlu</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"en.resolve.rxnorm_action_treatment"</span><span class="p">).</span><span class="n">predict</span><span class="p">(</span><span class="s">"""coumadin 5 mg"""</span><span class="p">)</span>
+</code></pre></div>  </div>
+
 </div>
 
 <h2 id="results">Results</h2>
@@ -649,7 +654,7 @@ hr.code-selector-underlie {
 
 }
 
-</style><div class="article__section-navigator clearfix"><div class="previous nav_link"><span>PREVIOUS</span><a href="/2022/04/23/roberta_large_token_classifier_conll03_pipeline_en_3_0.html">RoBERTa Large CoNLL-03 NER Pipeline</a></div><div class="next nav_link"><span>NEXT</span><a href="/2022/04/25/bert_sequence_classifier_binary_rct_biobert_en_3_0.html">RCT Binary Classifier (BioBERT)</a></div></div></div>
+</style><div class="article__section-navigator clearfix"><div class="previous nav_link"><span>PREVIOUS</span><a href="/2022/04/23/roberta_large_token_classifier_conll03_pipeline_en_3_0.html">RoBERTa Large CoNLL-03 NER Pipeline</a></div><div class="next nav_link"><span>NEXT</span><a href="/2022/04/25/bert_ner_chinese_roberta_large_upos_zh_3_0.html">Chinese BertForTokenClassification (from KoichiYasuoka)</a></div></div></div>
 
 </div>
 </div>

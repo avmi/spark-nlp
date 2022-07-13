@@ -481,6 +481,11 @@
 
 <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="nv">pipeline</span><span class="o">.</span><span class="py">fit</span><span class="o">(</span><span class="n">data</span><span class="o">).</span><span class="py">transform</span><span class="o">(</span><span class="n">data</span><span class="o">)</span>
 </code></pre></div>  </div>
+
+  <div class="language-python nlu-block highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nlu</span>
+<span class="n">nlu</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"en.classify.token_bert.ner_chemical"</span><span class="p">).</span><span class="n">predict</span><span class="p">(</span><span class="s">"""The results have shown that the product p - choloroaniline is not a significant factor in chlorhexidine - digluconate associated erosive cystitis. "A high percentage of kanamycin - colistin and povidone - iodine irrigations were associated with erosive cystitis."""</span><span class="p">)</span>
+</code></pre></div>  </div>
+
 </div>
 
 <h2 id="results">Results</h2>
@@ -549,16 +554,13 @@
 
 <h2 id="benchmarking">Benchmarking</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      Label   precision    recall  f1-score  support
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      label   precision    recall  f1-score  support
       B-CHEM       0.99      0.92      0.95    30731
       I-CHEM       0.99      0.93      0.96    31270
     accuracy       -         -         0.93    62001
    macro-avg       0.96      0.95      0.96    62001
 weighted-avg       0.99      0.93      0.96    62001
 </code></pre></div></div>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3OTUzMjI2MV19
--->
 </div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2022-01-06T00:00:00+00:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --></footer>

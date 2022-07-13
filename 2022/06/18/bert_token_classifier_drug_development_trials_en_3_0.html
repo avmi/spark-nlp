@@ -486,6 +486,11 @@
 
 <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="nv">pipeline</span><span class="o">.</span><span class="py">fit</span><span class="o">(</span><span class="n">data</span><span class="o">).</span><span class="py">transform</span><span class="o">(</span><span class="n">data</span><span class="o">)</span>
 </code></pre></div>  </div>
+
+  <div class="language-python nlu-block highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nlu</span>
+<span class="n">nlu</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"en.ner.drug_development_trials"</span><span class="p">).</span><span class="n">predict</span><span class="p">(</span><span class="s">"""In June 2003, the median overall survival  with and without topotecan were 4.0 and 3.6 months, respectively. The best complete response  ( CR ) , partial response  ( PR ) , stable disease and progressive disease were observed in 23, 63, 55 and 33 patients, respectively, with  topotecan,  and 11, 61, 66 and 32 patients, respectively, without topotecan."""</span><span class="p">)</span>
+</code></pre></div>  </div>
+
 </div>
 
 <h2 id="results">Results</h2>
@@ -565,7 +570,8 @@
 
 <h2 id="benchmarking">Benchmarking</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                B-ADE       0.50      0.33      0.40         3
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                label       prec       rec        f1   support
+                B-ADE       0.50      0.33      0.40         3
 B-Confidence_Interval       0.46      1.00      0.63        12
    B-Confidence_Range       1.00      0.98      0.99        42
    B-Confidence_level       1.00      0.67      0.81        43
@@ -591,10 +597,9 @@ B-Confidence_Interval       0.46      1.00      0.63        12
         I-Trial_Group       0.92      0.90      0.91       156
               I-Value       1.00      1.00      1.00        10
                     O       0.98      0.98      0.98      2622
-
-             accuracy                           0.96      3808
-            macro avg       0.86      0.86      0.85      3808
-         weighted avg       0.96      0.96      0.96      3808
+             accuracy         -         -       0.96      3808
+            macro-avg       0.86      0.86      0.85      3808
+         weighted-avg       0.96      0.96      0.96      3808
 </code></pre></div></div>
 </div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2022-06-18T00:00:00+00:00"><!-- start custom article footer snippet -->
 

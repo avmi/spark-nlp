@@ -475,6 +475,11 @@
 
 <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="nv">pipeline</span><span class="o">.</span><span class="py">fit</span><span class="o">(</span><span class="n">data</span><span class="o">).</span><span class="py">transform</span><span class="o">(</span><span class="n">data</span><span class="o">)</span>
 </code></pre></div>  </div>
+
+  <div class="language-python nlu-block highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nlu</span>
+<span class="n">nlu</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"en.classify.pico.seq_biobert"</span><span class="p">).</span><span class="n">predict</span><span class="p">(</span><span class="s">"""To compare the results of recording enamel opacities using the TF and modified DDE indices."""</span><span class="p">)</span>
+</code></pre></div>  </div>
+
 </div>
 
 <h2 id="results">Results</h2>
@@ -539,7 +544,7 @@
 
 <h2 id="benchmarking">Benchmarking</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         Label  precision    recall  f1-score   support
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         label  precision    recall  f1-score   support
           AIMS       0.92      0.94      0.93      3813
    CONCLUSIONS       0.85      0.86      0.86      4314
 DESIGN_SETTING       0.88      0.78      0.83      5628
@@ -551,9 +556,6 @@ DESIGN_SETTING       0.88      0.78      0.83      5628
      macro-avg       0.85      0.85      0.85     31270
   weighted-avg       0.87      0.86      0.86     31270
 </code></pre></div></div>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzUxMTI1NzldfQ==
--->
 </div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2022-02-07T00:00:00+00:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --></footer>

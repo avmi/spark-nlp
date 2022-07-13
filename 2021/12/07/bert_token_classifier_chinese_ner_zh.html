@@ -486,6 +486,11 @@
 
 <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="nv">pipeline</span><span class="o">.</span><span class="py">fit</span><span class="o">(</span><span class="n">example</span><span class="o">).</span><span class="py">transform</span><span class="o">(</span><span class="n">example</span><span class="o">)</span>
 </code></pre></div>  </div>
+
+  <div class="language-python nlu-block highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nlu</span>
+<span class="n">nlu</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"zh.ner.bert_token"</span><span class="p">).</span><span class="n">predict</span><span class="p">(</span><span class="s">"""我是莎拉，我从 1999 年 11 月 2 日。开始在斯图加特的梅赛德斯-奔驰公司工作。"""</span><span class="p">)</span>
+</code></pre></div>  </div>
+
 </div>
 
 <h2 id="results">Results</h2>
@@ -549,7 +554,8 @@
 
 <h2 id="benchmarking">Benchmarking</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>F1 Score : 0.8118
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>label   score
+   f1   0.8118
 </code></pre></div></div>
 </div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2021-12-07T00:00:00+00:00"><!-- start custom article footer snippet -->
 

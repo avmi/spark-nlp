@@ -503,6 +503,11 @@
 
 <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="nv">light_pipeline</span><span class="o">.</span><span class="py">annotate</span><span class="o">(</span><span class="s">"ایک امریکی تھنک ٹینک نے خبردار کیا ہے کہ جیسے جیسے چین مصنوعی ذہانت (آرٹیفیشل انٹیلی جنس) کے میدان میں ترقی کر رہا ہے، دنیا کا اقتصادی اور عسکری توازن تبدیل ہو سکتا ہے۔"</span><span class="o">)</span>
 </code></pre></div>  </div>
+
+  <div class="language-python nlu-block highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nlu</span>
+<span class="n">nlu</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"ur.classify.fakenews"</span><span class="p">).</span><span class="n">predict</span><span class="p">(</span><span class="s">"""ایک امریکی تھنک ٹینک نے خبردار کیا ہے کہ جیسے جیسے چین مصنوعی ذہانت (آرٹیفیشل انٹیلی جنس) کے میدان میں ترقی کر رہا ہے، دنیا کا اقتصادی اور عسکری توازن تبدیل ہو سکتا ہے۔"""</span><span class="p">)</span>
+</code></pre></div>  </div>
+
 </div>
 
 <h2 id="results">Results</h2>
@@ -555,14 +560,12 @@
 
 <h2 id="benchmarking">Benchmarking</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              precision    recall  f1-score   support
-
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       label  precision    recall  f1-score   support
         fake       0.77      0.70      0.73       415
         real       0.71      0.77      0.74       387
-
     accuracy                           0.73       802
-   macro avg       0.74      0.74      0.73       802
-weighted avg       0.74      0.73      0.73       802
+   macro-avg       0.74      0.74      0.73       802
+weighted-avg       0.74      0.73      0.73       802
 </code></pre></div></div>
 </div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2021-12-29T00:00:00+00:00"><!-- start custom article footer snippet -->
 
