@@ -417,7 +417,7 @@
 <!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="description">Description</h2>
 
 <p>The entity_recognizer_lg is a pretrained pipeline that we can use to process text with a simple pipeline that performs basic processing steps and recognizes entities.
-         It performs most of the common text processing tasks on your dataframe</p>
+It performs most of the common text processing tasks on your dataframe</p>
 
 <p class="btn-box"><button class="button button-orange" disabled="">Live Demo</button>
 <button class="button button-orange" disabled="">Open in Colab</button>
@@ -433,6 +433,10 @@
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">PretrainedPipeline</span><span class="p">(</span><span class="s">"entity_recognizer_lg"</span><span class="p">,</span> <span class="s">"sv"</span><span class="p">)</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">annotate</span><span class="p">(</span><span class="s">"""I love johnsnowlabs! """</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <div class="language-python nlu-block highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nlu</span>
+<span class="n">nlu</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">"sv.ner.lg"</span><span class="p">).</span><span class="n">predict</span><span class="p">(</span><span class="s">"""I love johnsnowlabs! """</span><span class="p">)</span>
 </code></pre></div>  </div>
 
 </div>
