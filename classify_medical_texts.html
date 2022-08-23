@@ -417,6 +417,9 @@
       <li      >
         <a href="/analyze_spelling_grammar">Analyze Spelling &amp; Grammar</a>
       </li>
+      <li      >
+        <a href="/question_answering">Question Answering</a>
+      </li>
       <li class="free_link"><strong>Spark NLP: World Languages</strong><span>Free</span></li>
       <li      >
         <a href="/identify_translate_languages">Identify &amp; Translate Languages</a>
@@ -476,31 +479,65 @@
       <li    class="active"     >
         <a href="/classify_medical_texts">Classify Medical Texts</a>
       </li>
-      <li><strong>Spark NLP for Finance and Legal</strong></li>
       <li      >
-        <a href="/entity_recognition">Entity Recognition</a>
+        <a href="/public_health">Public Health</a>
       </li>
+      <li><strong>Spark NLP for Finance</strong></li>
       <li      >
-        <a href="/sentiment_analysis">Sentiment Analysis</a>
-      </li>
-      <li data-hide="hide"      >
-        <a href="/deidentification_legal">De-identification</a>
-      </li>
-      <li data-hide="hide"      >
-        <a href="/relation_extraction">Relation Extraction</a>
-      </li>
-      <li data-hide="hide"      >
-        <a href="/table_extraction">Table Extraction</a>
+        <a href="/financial_entity_recognition">Recognize Financial Entities</a>
       </li>
       <li      >
-        <a href="/text_classification">Text Classification</a>
+        <a href="/financial_assertion_status">Understand Financial Entities Context</a>
+      </li>
+      <li      >
+        <a href="/financial_relation_extraction">Extract Financial Relationships</a>
+      </li>
+      <li      >
+        <a href="/financial_company_normalization">Normalization & Data Augmentation</a>
+      </li>
+      <li      >
+        <a href="/financial_text_classification">Classify Financial Texts</a>
+      </li>
+      <li      >
+        <a href="/financial_sentiment_analysis">Financial Sentiment Analysis</a>
+      </li>
+      <li      >
+        <a href="/financial_deidentification">Financial Deidentification</a>
+      </li>
+      <li data-hide="hide"      >
+        <a href="/financial_table_understanding">Understand Tables</a>
+      </li>
+      <li><strong>Spark NLP for Legal</strong></li>
+      <li      >
+        <a href="/legal_entity_recognition">Recognize Legal Entities</a>
+      </li>
+      <li data-hide="hide"      >
+        <a href="/legal_assertion_status">Understand Legal Entities Context</a>
+      </li>
+      <li      >
+        <a href="/legal_relation_extraction">Extract Legal Relationships</a>
+      </li>
+      <li      >
+        <a href="/legal_company_normalization">Normalization & Data Augmentation</a>
+      </li>
+      <li      >
+        <a href="/legal_text_classification">Classify Legal Texts</a>
+      </li>
+      <li data-hide="hide"      >
+        <a href="/legal_sentiment_analysis">Legal Sentiment Analysis</a>
+      </li>
+      <li      >
+        <a href="/legal_deidentification">Legal Deidentification</a>
+      </li>
+      <li data-hide="hide"      >
+        <a href="/legal_table_understanding">Understand Tables</a>
       </li>
       <li><strong>Spark OCR</strong></li>
       <li      >
         <a href="/extract_text_from_documents">Extract Text from Documents</a>
       </li>
       <li      >
-        <a href="/extract_tables">Extract Tables </a>
+        <a href="/extract_tables">Extract Tables</a>
       </li>
       <li      >
         <a href="/visual_document_understanding">Visual Document Understanding</a>
@@ -513,6 +550,10 @@
       </li>
       <li      >
         <a href="/analyze_non_english_text_documents">Analyze Non-English Text &amp; Documents</a>
+      </li>
+      <li><strong>Databricks Solution Accelerators</strong></li>
+      <li      >
+        <a href="/databricks_solution_accelerators">Notebooks</a>
       </li>
     </ul>
   </div><div class="grid grid--reverse">
@@ -543,7 +584,7 @@
                     <img src="/assets/images/Classify-documents-w.svg" />
                   </figure><div class="tab-item-title">Gender Classifier</div><div class="tab-description">This demo shows how to identify gender from medical texts in accordance with the gender of the patient.</div><ul class="tab-menu"><li><a id="gender_classifier" class="button button--normal button--pill button--lg"
                       href="https://demo.johnsnowlabs.com/healthcare/CLASSIFICATION_GENDER/">Live Demo</a></li><li><a id="gender_classifier" class="button button--blue_btn button--pill button--lg"
-                      href="https://colab.research.google.com/github/JohnSnowLabs/spark-nlp-workshop/blob/master/tutorials/Certification_Trainings/Healthcare/21.Gender_Classifier.ipynb">Colab Netbook</a></li></ul></div> 
+                      href="https://colab.research.google.com/github/JohnSnowLabs/spark-nlp-workshop/blob/master/tutorials/streamlit_notebooks/healthcare/CLASSIFICATION_GENDER.ipynb">Colab Netbook</a></li></ul></div> 
             </div><div class="tab-item ">
               <div class="tab-item-inner"><figure class="tab_fig_blue">
                     <img src="/assets/images/Detect_ADE_related_texts.svg" />
@@ -553,6 +594,15 @@
                   </figure><div class="tab-item-title">Detect ADE-related texts</div><div class="tab-description">This model classifies texts as containing or not containing adverse drug events description.</div><ul class="tab-menu"><li><a id="detect_ade_related_texts" class="button button--normal button--pill button--lg"
                       href="https://demo.johnsnowlabs.com/healthcare/CLASSIFICATION_ADE/">Live Demo</a></li><li><a id="detect_ade_related_texts" class="button button--blue_btn button--pill button--lg"
                       href="https://colab.research.google.com/github/JohnSnowLabs/spark-nlp-workshop/blob/master/tutorials/Certification_Trainings/Healthcare/16.Adverse_Drug_Event_ADE_NER_and_Classifier.ipynb">Colab Netbook</a></li></ul></div> 
+            </div><div class="tab-item ">
+              <div class="tab-item-inner"><figure class="tab_fig_blue">
+                    <img src="/assets/images/Classify_Randomized_Clinical_Trial_RCT.svg" />
+                  </figure>
+                  <figure class="tab_fig_white">
+                    <img src="/assets/images/Classify_Randomized_Clinical_Trial_RCT_f.svg" />
+                  </figure><div class="tab-item-title">Classify Randomized Clinical Trial (RCT)</div><div class="tab-description">This demo shows a classifier that can classify whether an article is a randomized clinical trial (RCT) or not, as well as a classifier that can divide it into sections in abstracts of scientific articles on randomized clinical trials (RCT).</div><ul class="tab-menu"><li><a id="classify_randomized_clinical_trial_rct" class="button button--normal button--pill button--lg"
+                      href="https://demo.johnsnowlabs.com/healthcare/CLASSIFICATION_RCT/">Live Demo</a></li><li><a id="classify_randomized_clinical_trial_rct" class="button button--blue_btn button--pill button--lg"
+                      href="https://colab.research.google.com/github/JohnSnowLabs/spark-nlp-workshop/blob/master/tutorials/streamlit_notebooks/healthcare/CLASSIFICATION_RCT.ipynb">Colab Netbook</a></li></ul></div> 
             </div></div></div></div> </section></div>
 </div>
 
