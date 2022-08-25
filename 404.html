@@ -425,8 +425,8 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-59JLR64');</script>
-<!-- End Google Tag Manager --><title>Legal Zero-shot Relation Extraction- Spark NLP Model</title><meta name="description" content="DescriptionThis is a Zero-shot Relation Extraction Model, meaning that it does not require any training data, just few examples of of the relations types you...">
-<link rel="canonical" href="/2022/08/22/legre_zero_shot_en_3_2.html"><link rel="alternate" type="application/rss+xml" title="Spark NLP" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ -->
+<!-- End Google Tag Manager --><title>Legal Relation Extraction (Whereas)- Spark NLP Model</title><meta name="description" content="DescriptionThis is a Relation Extraction model to infer relations between elements in WHEREAS clauses, more specifically the SUBJECT, the ACTION and the OBJE...">
+<link rel="canonical" href="/2022/08/24/legre_whereas_en.html"><link rel="alternate" type="application/rss+xml" title="Spark NLP" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ -->
 <!---->
 <!-- <link rel="apple-touch-icon" sizes="180x180" href="/fav.ico"> -->
 
@@ -822,45 +822,27 @@
 
 <!-- end custom main top snippet --><article><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><div class="article__header"><div class="header-author"><div class="article__info clearfix"><div class="left-col">
             <a class="edit-on-github-btn" target="_blank" rel="alternate"
-               href="https://github.com/johnsnowlabs/spark-nlp/tree/master/docs/_posts/josejuanmartinez/2022-08-22-legre_zero_shot_en_3_2.md">
+               href="https://github.com/johnsnowlabs/spark-nlp/tree/master/docs/_posts/josejuanmartinez/2022-08-24-legre_whereas_en.md">
               <span class="fab fa-github"></span>
               <span class="edit-on-github-label">Edit on GitHub</span>
             </a>
-        </div><ul class="right-col menu"><li><i class="far fa-user"></i> <span>John Snow Labs</span></li><li><i class="far fa-calendar-alt"></i> <span>Aug 22, 2022</span>
-            </li></ul></div><meta itemprop="author" content=""/><meta itemprop="datePublished" content="2022-08-22T00:00:00+00:00"></div><header class="main-docs"><h1>Legal Zero-shot Relation Extraction</h1></header></div><meta itemprop="headline" content="Legal Zero-shot Relation Extraction"><div class="article__info tags_box clearfix"><ul class="left-col menu"><li>en</li><li>legal</li><li>re</li><li>zero</li><li>shot</li><li>zero_shot</li><li>licensed</li></ul></div><meta itemprop="author" content=""/><meta itemprop="datePublished" content="2022-08-22T00:00:00+00:00">
-    <meta itemprop="keywords" content="en,legal,re,zero,shot,zero_shot,licensed"><div class="js-article-content"><div class="model-wrap"><div class="layout--article"><!-- start custom article top snippet -->
+        </div><ul class="right-col menu"><li><i class="far fa-user"></i> <span>John Snow Labs</span></li><li><i class="far fa-calendar-alt"></i> <span>Aug 24, 2022</span>
+            </li></ul></div><meta itemprop="author" content=""/><meta itemprop="datePublished" content="2022-08-24T00:00:00+00:00"></div><header class="main-docs"><h1>Legal Relation Extraction (Whereas)</h1></header></div><meta itemprop="headline" content="Legal Relation Extraction (Whereas)"><div class="article__info tags_box clearfix"><ul class="left-col menu"><li>en</li><li>legal</li><li>re</li><li>relations</li><li>licensed</li></ul></div><meta itemprop="author" content=""/><meta itemprop="datePublished" content="2022-08-24T00:00:00+00:00">
+    <meta itemprop="keywords" content="en,legal,re,relations,licensed"><div class="js-article-content"><div class="model-wrap"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="description">Description</h2>
 
-<p>This is a Zero-shot Relation Extraction Model, meaning that it does not require any training data, just few examples of of the relations types you are looking for, to output a proper result.</p>
+<p>This is a Relation Extraction model to infer relations between elements in WHEREAS clauses, more specifically the SUBJECT, the ACTION and the OBJECT. There are two relations possible: <code class="language-plaintext highlighter-rouge">has_subject</code> and <code class="language-plaintext highlighter-rouge">has_object</code>.</p>
 
-<p>Make sure you keep the proper syntax of the relations you want to extract. For example:</p>
-
-<p>Before Spark NLP 4.0</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>re_model.setRelationalCategories({
-    "GRANTS_TO": [" grants "],
-    "GRANTS": [" grants "]
-})
-</code></pre></div></div>
-
-<p>After Spark NLP 4.0</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>re_model.setRelationalCategories({
-    "GRANTS_TO": ["{OBLIGATION_SUBJECT} grants {OBLIGATION_INDIRECT_OBJECT}"],
-    "GRANTS": ["{OBLIGATION_SUBJECT} grants {OBLIGATION_ACTION}"]
-})
-</code></pre></div></div>
-
-<ul>
-  <li>The keys of the dictionary are the name of the relations (<code class="language-plaintext highlighter-rouge">GRANTS_TO</code>, <code class="language-plaintext highlighter-rouge">GRANTS</code>)</li>
-  <li>The values are list of sentences with similar examples of the relation</li>
-  <li>The values in brackets are the NER labels extracted by an NER component before</li>
-</ul>
+<p>You can also use <code class="language-plaintext highlighter-rouge">legpipe_whereas</code> which includes this model and its NER and also depedency parsing, to carry out chunk extraction using grammatical features (the dependency tree).</p>
 
 <h2 id="predicted-entities">Predicted Entities</h2>
 
+<p><code class="language-plaintext highlighter-rouge">has_subject</code>, <code class="language-plaintext highlighter-rouge">has_object</code></p>
+
 <p class="btn-box"><button class="button button-orange" disabled="">Live Demo</button>
 <button class="button button-orange" disabled="">Open in Colab</button>
-<a href="https://s3.amazonaws.com/auxdata.johnsnowlabs.com/legal/models/legre_zero_shot_en_1.0.0_3.2_1661181212397.zip" class="button button-orange button-orange-trans arr button-icon">Download</a></p>
+<a href="https://s3.amazonaws.com/auxdata.johnsnowlabs.com/legal/models/legre_whereas_en_1.0.0_3.2_1661341573628.zip" class="button button-orange button-orange-trans arr button-icon">Download</a></p>
 
 <h2 id="how-to-use">How to use</h2>
 
@@ -872,73 +854,54 @@
   <span class="p">.</span><span class="n">setInputCol</span><span class="p">(</span><span class="s">"text"</span><span class="p">)</span>\
   <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"document"</span><span class="p">)</span>
 
-<span class="n">sparktokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">()</span>\
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">Tokenizer</span><span class="p">()</span>\
   <span class="p">.</span><span class="n">setInputCols</span><span class="p">(</span><span class="s">"document"</span><span class="p">)</span>\
   <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"token"</span><span class="p">)</span>
 
-<span class="n">tokenClassifier</span> <span class="o">=</span> <span class="n">FinanceBertForTokenClassifier</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">'legner_obligations'</span><span class="p">,</span><span class="s">'en'</span><span class="p">,</span> <span class="s">'legal/models'</span><span class="p">)</span>\
-  <span class="p">.</span><span class="n">setInputCols</span><span class="p">(</span><span class="s">"token"</span><span class="p">,</span> <span class="s">"document"</span><span class="p">)</span>\
-  <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"ner"</span><span class="p">)</span>\
-  <span class="p">.</span><span class="n">setCaseSensitive</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">embeddings</span> <span class="o">=</span> <span class="n">RoBertaEmbeddings</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"roberta_embeddings_legal_roberta_base"</span><span class="p">,</span><span class="s">"en"</span><span class="p">)</span> \
+    <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"document"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">])</span> \
+    <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"embeddings"</span><span class="p">)</span>
+
+<span class="n">ner_model</span> <span class="o">=</span> <span class="n">LegalNerModel</span><span class="p">().</span><span class="n">pretrained</span><span class="p">(</span><span class="s">'legner_whereas'</span><span class="p">,</span> <span class="s">'en'</span><span class="p">,</span> <span class="s">'legal/models'</span><span class="p">)</span>\
+        <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"document"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">,</span> <span class="s">"embeddings"</span><span class="p">])</span>\
+        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"ner"</span><span class="p">)</span>
 
 <span class="n">ner_converter</span> <span class="o">=</span> <span class="n">NerConverter</span><span class="p">()</span>\
-    <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"document"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">,</span> <span class="s">"ner"</span><span class="p">])</span>\
-    <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"ner_chunk"</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"document"</span><span class="p">,</span><span class="s">"token"</span><span class="p">,</span><span class="s">"ner"</span><span class="p">])</span>\
+        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"ner_chunk"</span><span class="p">)</span>
 
-<span class="n">re_model</span> <span class="o">=</span> <span class="n">ZeroShotRelationExtractionModel</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"legre_zero_shot"</span><span class="p">,</span> <span class="s">"en"</span><span class="p">,</span> <span class="s">"legal/models"</span><span class="p">)</span>\
-    <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"ner_chunk"</span><span class="p">,</span> <span class="s">"sentence"</span><span class="p">])</span> \
+<span class="n">reDL</span> <span class="o">=</span> <span class="n">RelationExtractionDLModel</span><span class="p">()</span>\
+    <span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"legre_whereas"</span><span class="p">,</span> <span class="s">"en"</span><span class="p">,</span> <span class="s">"legal/models"</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">setPredictionThreshold</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"ner_chunk"</span><span class="p">,</span> <span class="s">"document"</span><span class="p">])</span>\
     <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"relations"</span><span class="p">)</span>
+    
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">stages</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">documentAssembler</span><span class="p">,</span>
+    <span class="n">tokenizer</span><span class="p">,</span>
+    <span class="n">embeddings</span><span class="p">,</span>
+    <span class="n">ner_model</span><span class="p">,</span>
+    <span class="n">ner_converter</span><span class="p">,</span>
+    <span class="n">reDL</span>
+<span class="p">])</span>
 
-<span class="c1"># Remember it's 2 curly brackets instead of one if you are using Spark NLP &lt; 4.0
-</span><span class="n">re_model</span><span class="p">.</span><span class="n">setRelationalCategories</span><span class="p">({</span>
-    <span class="s">"GRANTS_TO"</span><span class="p">:</span> <span class="p">[</span><span class="s">"{OBLIGATION_SUBJECT} grants {OBLIGATION_INDIRECT_OBJECT}"</span><span class="p">],</span>
-    <span class="s">"GRANTS"</span><span class="p">:</span> <span class="p">[</span><span class="s">"{OBLIGATION_SUBJECT} grants {OBLIGATION_ACTION}"</span><span class="p">]</span>
-<span class="p">})</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s">"""
+WHEREAS VerticalNet owns and operates a series of online communities ( as defined below ) that are accessible via the world wide web , each of which is designed to be an online gathering place for businesses of a certain type or within a certain industry ;
+"""</span>
 
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">sparknlp</span><span class="p">.</span><span class="n">base</span><span class="p">.</span><span class="n">Pipeline</span><span class="p">()</span> \
-    <span class="p">.</span><span class="n">setStages</span><span class="p">([</span><span class="n">document_assembler</span><span class="p">,</span>  
-                <span class="n">sparktokenizer</span><span class="p">,</span>
-                <span class="n">tokenClassifier</span><span class="p">,</span> 
-                <span class="n">ner_converter</span><span class="p">,</span>
-                <span class="n">re_model</span>
-               <span class="p">])</span>
-               
-<span class="c1"># create Spark DF
-</span>
-<span class="n">sample_text</span> <span class="o">=</span> <span class="s">"""Fox grants to Licensee a limited, exclusive right and license"""</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">createDataFrame</span><span class="p">([[</span><span class="n">sample_text</span><span class="p">]]).</span><span class="n">toDF</span><span class="p">(</span><span class="s">"text"</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">createDataFrame</span><span class="p">([[</span><span class="n">text</span><span class="p">]]).</span><span class="n">toDF</span><span class="p">(</span><span class="s">"text"</span><span class="p">)</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="c1"># ner output
-</span><span class="n">results</span><span class="p">.</span><span class="n">selectExpr</span><span class="p">(</span><span class="s">"explode(ner_chunk) as ner"</span><span class="p">).</span><span class="n">show</span><span class="p">(</span><span class="n">truncate</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-
-<span class="c1"># relations output
-</span><span class="n">results</span><span class="p">.</span><span class="n">selectExpr</span><span class="p">(</span><span class="s">"explode(relations) as relation"</span><span class="p">).</span><span class="n">show</span><span class="p">(</span><span class="n">truncate</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-
+<span class="n">res</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>  </div>
 
 </div>
 
 <h2 id="results">Results</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+----------------------------------------------------------------------------------------------------------------------------+
-|ner                                                                                                                         |
-+----------------------------------------------------------------------------------------------------------------------------+
-|[chunk, 0, 2, Fox, <span class="o">[</span>entity -&gt; OBLIGATION_SUBJECT, sentence -&gt; 0, chunk -&gt; 0, confidence -&gt; 0.6905101], <span class="o">[]]</span>                  |
-|[chunk, 4, 9, grants, <span class="o">[</span>entity -&gt; OBLIGATION_ACTION, sentence -&gt; 0, chunk -&gt; 1, confidence -&gt; 0.7512371], <span class="o">[]]</span>                |
-|[chunk, 14, 21, Licensee, <span class="o">[</span>entity -&gt; OBLIGATION_INDIRECT_OBJECT, sentence -&gt; 0, chunk -&gt; 2, confidence -&gt; 0.8294538], <span class="o">[]]</span>   |
-|[chunk, 23, 31, a limited, <span class="o">[</span>entity -&gt; OBLIGATION, sentence -&gt; 0, chunk -&gt; 3, confidence -&gt; 0.7429814], <span class="o">[]]</span>                  |
-|[chunk, 34, 60, exclusive right and license, <span class="o">[</span>entity -&gt; OBLIGATION, sentence -&gt; 0, chunk -&gt; 4, confidence -&gt; 0.9236847], <span class="o">[]]</span>|
-+----------------------------------------------------------------------------------------------------------------------------+
-
-+-------------+
-|relation     |
-+-------------+
-|[category, 0, 91, GRANTS, <span class="o">[</span>entity1_begin -&gt; 0, relation -&gt; GRANTS, hypothesis -&gt; Fox grants grants, confidence -&gt; 0.7592092, nli_prediction -&gt; entail, entity1 -&gt; OBLIGATION_SUBJECT, syntactic_distance -&gt; undefined, chunk2 -&gt; grants, entity2_end -&gt; 9, entity1_end -&gt; 2, entity2_begin -&gt; 4, entity2 -&gt; OBLIGATION_ACTION, chunk1 -&gt; Fox, sentence -&gt; 0], <span class="o">[]]</span>                       |
-|[category, 92, 185, GRANTS_TO, <span class="o">[</span>entity1_begin -&gt; 0, relation -&gt; GRANTS_TO, hypothesis -&gt; Fox grants Licensee, confidence -&gt; 0.9822127, nli_prediction -&gt; entail, entity1 -&gt; OBLIGATION_SUBJECT, syntactic_distance -&gt; undefined, chunk2 -&gt; Licensee, entity2_end -&gt; 21, entity1_end -&gt; 2, entity2_begin -&gt; 14, entity2 -&gt; OBLIGATION_INDIRECT_OBJECT, chunk1 -&gt; Fox, sentence -&gt; 0], <span class="o">[]]</span>|
-+-------------+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   relation         entity1 entity1_begin entity1_end      chunk1        entity2 entity2_begin entity2_end                         chunk2 confidence
+has_subject WHEREAS_SUBJECT            11          21 VerticalNet WHEREAS_ACTION            32          39                       operates  0.9982886
+has_subject WHEREAS_SUBJECT            11          21 VerticalNet WHEREAS_OBJECT            41          70 a series of online communities  0.9890683
+ has_object  WHEREAS_ACTION            32          39    operates WHEREAS_OBJECT            41          70 a series of online communities  0.7831568
 </code></pre></div></div>
 
 <h2 class="model-param" id="model-information">Model Information</h2>
@@ -947,7 +910,7 @@
   <tbody>
     <tr>
       <td>Model Name:</td>
-      <td>legre_zero_shot</td>
+      <td>legre_whereas</td>
     </tr>
     <tr>
       <td>Type:</td>
@@ -971,19 +934,28 @@
     </tr>
     <tr>
       <td>Size:</td>
-      <td>406.4 MB</td>
-    </tr>
-    <tr>
-      <td>Case sensitive:</td>
-      <td>true</td>
+      <td>409.9 MB</td>
     </tr>
   </tbody>
 </table>
 
 <h2 id="references">References</h2>
 
-<p>Bert Base (cased) trained on the GLUE MNLI dataset.</p>
-</div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2022-08-22T00:00:00+00:00"><!-- start custom article footer snippet -->
+<p>Manual annotations on CUAD dataset</p>
+
+<h2 id="benchmarking">Benchmarking</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Relation           Recall Precision        F1   Support
+
+has_object          0.946     0.981     0.964        56
+has_subject         0.952     0.988     0.969        83
+no_rel              1.000     0.970     0.985       161
+
+Avg.                0.966     0.980     0.973
+
+Weighted Avg.       0.977     0.977     0.977
+</code></pre></div></div>
+</div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2022-08-24T00:00:00+00:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --></footer>
 
@@ -1108,7 +1080,7 @@ hr.code-selector-underlie {
 
 }
 
-</style><div class="article__section-navigator clearfix"><div class="previous nav_link"><span>PREVIOUS</span><a href="/2022/08/22/legner_obligations_en_3_2.html">Legal NER Obligations on Agreements</a></div></div></div>
+</style><div class="article__section-navigator clearfix"><div class="previous nav_link"><span>PREVIOUS</span><a href="/2022/08/24/legpipe_whereas_en.html">Whereas Pipeline</a></div></div></div>
 
 </div>
 </div>
