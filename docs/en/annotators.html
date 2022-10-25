@@ -9,7 +9,9 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-59JLR64');</script>
-<!-- End Google Tag Manager --><title>Annotators</title><meta name="description" content="High Performance NLP with Apache Spark
+<!-- End Google Tag Manager --><title>Annotators</title><meta property="og:title" content=""/>
+
+<meta name="description" content="High Performance NLP with Apache Spark
 ">
 <link rel="canonical" href="/docs/en/annotators"><link rel="alternate" type="application/rss+xml" title="Spark NLP" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ -->
 <!---->
@@ -521,7 +523,8 @@
     <li><a href="/docs">Documentation</a></li>
     <li>Annotators</li>
   </ul>
-</div></div><header class="main-docs"><h1>Annotators</h1></header><span class="split-space">&nbsp;</span>
+</div></div><header class="main-docs have_subtitle">
+          <h1>Annotators</h1><div class="top-subtitle mont"></div></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
             href="https://github.com/johnsnowlabs/spark-nlp/tree/master/docs/en/annotators.md">
@@ -902,6 +905,16 @@ in the DataFrames.</li>
         <td>Opensource</td>
       </tr>
       <tr>
+        <td><a href="./transformers#camembertembeddings">CamemBertEmbeddings</a></td>
+        <td>CamemBert is based on Facebook’s RoBERTa model released in 2019.</td>
+        <td>Opensource</td>
+      </tr>
+      <tr>
+        <td><a href="./transformers#camembertfortokenclassification">CamemBertForTokenClassification</a></td>
+        <td>CamemBertForTokenClassification can load CamemBERT Models with a token classification head on top</td>
+        <td>Opensource</td>
+      </tr>
+      <tr>
         <td><a href="./transformers#debertaembeddings">DeBertaEmbeddings</a></td>
         <td>DeBERTa builds on RoBERTa with disentangled attention and enhanced mask decoder training with half of the data used in RoBERTa.</td>
         <td>Opensource</td>
@@ -992,8 +1005,18 @@ in the DataFrames.</li>
         <td>Opensource</td>
       </tr>
       <tr>
+        <td><a href="./transformers#spanbertcoref">SpanBertCoref</a></td>
+        <td>A coreference resolution model based on SpanBert.</td>
+        <td>Opensource</td>
+      </tr>
+      <tr>
         <td><a href="./transformers#t5transformer">T5Transformer</a></td>
         <td>T5 reconsiders all NLP tasks into a unified text-to-text-format where the input and output are always text strings, in contrast to BERT-style models that can only output either a class label or a span of the input.</td>
+        <td>Opensource</td>
+      </tr>
+      <tr>
+        <td><a href="./transformers#tapasforquestionanswering">TapasForQuestionAnswering</a></td>
+        <td>TapasForQuestionAnswering is an implementation of TaPas - a BERT-based model specifically designed for answering questions about tabular data.</td>
         <td>Opensource</td>
       </tr>
       <tr>
@@ -1004,6 +1027,11 @@ in the DataFrames.</li>
       <tr>
         <td><a href="./transformers#vitforimageclassification">ViTForImageClassification</a></td>
         <td>Vision Transformer (ViT) for image classification.</td>
+        <td>Opensource</td>
+      </tr>
+      <tr>
+        <td><a href="./transformers#wav2vec2forctc">Wav2Vec2ForCTC</a></td>
+        <td>Wav2Vec2 Model with a language modeling head on top for Connectionist Temporal Classification (CTC).</td>
         <td>Opensource</td>
       </tr>
       <tr>
@@ -1077,7 +1105,7 @@ in the DataFrames.</li>
 });
  </script>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="bigtextmatcher">BigTextMatcher</h2>
 
@@ -1103,7 +1131,7 @@ in the DataFrames.</li>
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/matcher/big_text_matcher/index.html#sparknlp.annotator.matcher.big_text_matcher.BigTextMatcher">BigTextMatcher</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/matcher/big_text_matcher/index.html#sparknlp.annotator.matcher.big_text_matcher.BigTextMatcher">BigTextMatcher</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/btm/BigTextMatcher">BigTextMatcher</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/btm/BigTextMatcher.scala">BigTextMatcher</a></td>
         </tr>
@@ -1114,10 +1142,10 @@ in the DataFrames.</li>
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -1220,7 +1248,7 @@ For usage and examples see the documentation of the main class.</p>
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/matcher/big_text_matcher/index.html#sparknlp.annotator.matcher.big_text_matcher.BigTextMatcherModel">BigTextMatcherModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/matcher/big_text_matcher/index.html#sparknlp.annotator.matcher.big_text_matcher.BigTextMatcherModel">BigTextMatcherModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/btm/BigTextMatcherModel">BigTextMatcherModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/btm/BigTextMatcherModel.scala">BigTextMatcherModel</a></td>
         </tr>
@@ -1248,7 +1276,7 @@ For usage and examples see the documentation of the main class.</p>
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/base/chunk2_doc/index.html#sparknlp.base.chunk2_doc.Chunk2Doc">Chunk2Doc</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/base/chunk2_doc/index.html#sparknlp.base.chunk2_doc.Chunk2Doc">Chunk2Doc</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/Chunk2Doc">Chunk2Doc</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/Chunk2Doc.scala">Chunk2Doc</a></td>
       </tr>
@@ -1259,10 +1287,10 @@ For usage and examples see the documentation of the main class.</p>
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -1337,7 +1365,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/embeddings/chunk_embeddings/index.html#sparknlp.annotator.embeddings.chunk_embeddings.ChunkEmbeddings">ChunkEmbeddings</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/embeddings/chunk_embeddings/index.html#sparknlp.annotator.embeddings.chunk_embeddings.ChunkEmbeddings">ChunkEmbeddings</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/embeddings/ChunkEmbeddings">ChunkEmbeddings</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/embeddings/ChunkEmbeddings.scala">ChunkEmbeddings</a></td>
       </tr>
@@ -1348,10 +1376,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -1483,7 +1511,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="chunktokenizer">ChunkTokenizer</h2>
 
@@ -1508,7 +1536,7 @@ The result is then flattened, resulting in a single array.</p>
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/token/chunk_tokenizer/index.html#sparknlp.annotator.token.chunk_tokenizer.ChunkTokenizer">ChunkTokenizer</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/token/chunk_tokenizer/index.html#sparknlp.annotator.token.chunk_tokenizer.ChunkTokenizer">ChunkTokenizer</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ChunkTokenizer">ChunkTokenizer</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ChunkTokenizer.scala">ChunkTokenizer</a></td>
         </tr>
@@ -1519,10 +1547,10 @@ The result is then flattened, resulting in a single array.</p>
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -1643,7 +1671,7 @@ For usage and examples see the documentation of the main class.</p>
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/token/chunk_tokenizer/index.html#sparknlp.annotator.token.chunk_tokenizer.ChunkTokenizerModel">ChunkTokenizerModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/token/chunk_tokenizer/index.html#sparknlp.annotator.token.chunk_tokenizer.ChunkTokenizerModel">ChunkTokenizerModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ChunkTokenizerModel">ChunkTokenizerModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ChunkTokenizerModel.scala">ChunkTokenizerModel</a></td>
         </tr>
@@ -1684,7 +1712,7 @@ and the  <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/chunker/index.html#sparknlp.annotator.chunker.Chunker">Chunker</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/chunker/index.html#sparknlp.annotator.chunker.Chunker">Chunker</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/Chunker">Chunker</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/Chunker.scala">Chunker</a></td>
       </tr>
@@ -1695,10 +1723,10 @@ and the  <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -1807,7 +1835,7 @@ and the  <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="classifierdl">ClassifierDL</h2>
 
@@ -1842,7 +1870,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/classifier_dl/classifier_dl/index.html#sparknlp.annotator.classifier_dl.classifier_dl.ClassifierDLApproach">ClassifierDLApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/classifier_dl/classifier_dl/index.html#sparknlp.annotator.classifier_dl.classifier_dl.ClassifierDLApproach">ClassifierDLApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/classifier/dl/ClassifierDLApproach">ClassifierDLApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/classifier/dl/ClassifierDLApproach.scala">ClassifierDLApproach</a></td>
         </tr>
@@ -1853,10 +1881,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In this example, the training data `"sentiment.csv"` has the form of
@@ -1987,7 +2015,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/classifier_dl/classifier_dl/index.html#sparknlp.annotator.classifier_dl.classifier_dl.ClassifierDLModel">ClassifierDLModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/classifier_dl/classifier_dl/index.html#sparknlp.annotator.classifier_dl.classifier_dl.ClassifierDLModel">ClassifierDLModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/classifier/dl/ClassifierDLModel">ClassifierDLModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/classifier/dl/ClassifierDLModel.scala">ClassifierDLModel</a></td>
         </tr>
@@ -1998,10 +2026,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -2106,7 +2134,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="contextspellchecker">ContextSpellChecker</h2>
 
@@ -2143,7 +2171,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/spell_check/context_spell_checker/index.html#sparknlp.annotator.spell_check.context_spell_checker.ContextSpellCheckerApproach">ContextSpellCheckerApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/spell_check/context_spell_checker/index.html#sparknlp.annotator.spell_check.context_spell_checker.ContextSpellCheckerApproach">ContextSpellCheckerApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/spell/context/ContextSpellCheckerApproach">ContextSpellCheckerApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/spell/context/ContextSpellCheckerApproach.scala">ContextSpellCheckerApproach</a></td>
         </tr>
@@ -2154,10 +2182,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># For this example, we use the first Sherlock Holmes book as the training dataset.
@@ -2278,7 +2306,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/spell_check/context_spell_checker/index.html#sparknlp.annotator.spell_check.context_spell_checker.ContextSpellCheckerModel">ContextSpellCheckerModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/spell_check/context_spell_checker/index.html#sparknlp.annotator.spell_check.context_spell_checker.ContextSpellCheckerModel">ContextSpellCheckerModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/spell/context/ContextSpellCheckerModel">ContextSpellCheckerModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/spell/context/ContextSpellCheckerModel.scala">ContextSpellCheckerModel</a></td>
         </tr>
@@ -2322,7 +2350,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/matcher/date_matcher/index.html#sparknlp.annotator.matcher.date_matcher.DateMatcher">DateMatcher</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/matcher/date_matcher/index.html#sparknlp.annotator.matcher.date_matcher.DateMatcher">DateMatcher</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/DateMatcher">DateMatcher</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/DateMatcher.scala">DateMatcher</a></td>
       </tr>
@@ -2333,10 +2361,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -2415,7 +2443,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="dependencyparser">DependencyParser</h2>
 
@@ -2451,7 +2479,7 @@ you find precise answers to specific questions.</p>
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/dependency/dependency_parser/index.html#sparknlp.annotator.dependency.dependency_parser.DependencyParserApproach">DependencyParserApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/dependency/dependency_parser/index.html#sparknlp.annotator.dependency.dependency_parser.DependencyParserApproach">DependencyParserApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/parser/dep/DependencyParserApproach">DependencyParserApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/parser/dep/DependencyParserApproach.scala">DependencyParserApproach</a></td>
         </tr>
@@ -2462,10 +2490,10 @@ you find precise answers to specific questions.</p>
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -2584,7 +2612,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/dependency/dependency_parser/index.html#sparknlp.annotator.dependency.dependency_parser.DependencyParserModel">DependencyParserModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/dependency/dependency_parser/index.html#sparknlp.annotator.dependency.dependency_parser.DependencyParserModel">DependencyParserModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/parser/dep/DependencyParserModel">DependencyParserModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/parser/dep/DependencyParserModel.scala">DependencyParserModel</a></td>
         </tr>
@@ -2613,7 +2641,7 @@ Chunk text must be contained within input <code class="language-plaintext highli
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/base/doc2_chunk/index.html#sparknlp.base.doc2_chunk.Doc2Chunk">Doc2Chunk</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/base/doc2_chunk/index.html#sparknlp.base.doc2_chunk.Doc2Chunk">Doc2Chunk</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/Doc2Chunk">Doc2Chunk</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/Doc2Chunk.scala">Doc2Chunk</a></td>
       </tr>
@@ -2624,10 +2652,10 @@ Chunk text must be contained within input <code class="language-plaintext highli
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -2691,9 +2719,9 @@ Chunk text must be contained within input <code class="language-plaintext highli
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
-  <h2 id="doc2vec">Doc2Vec</h2>
+  <h2 id="doc2vec-1">Doc2Vec 1</h2>
 
   <div class="top_tab_li" style="text-align: center;">
     <button class="tab-li code-selector-active approach-button">Approach</button>
@@ -2716,7 +2744,7 @@ method to train the model. The variable names in the implementation match the or
 
     <p><strong>Sources</strong> :</p>
 
-    <p>For the original C implementation, see https://code.google.com/p/word2vec/</p>
+    <p>For the original C implementation, see <a href="https://code.google.com/p/word2vec/">https://code.google.com/p/word2vec/</a></p>
 
     <p>For the research paper, see
 <a href="https://arxiv.org/abs/1301.3781">Efficient Estimation of Word Representations in Vector Space</a>
@@ -2729,7 +2757,7 @@ and <a href="https://arxiv.org/pdf/1310.4546v1.pdf">Distributed Representations 
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/embeddings/doc2vec/index.html#sparknlp.annotator.embeddings.doc2vec.Doc2VecApproach">Doc2VecApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/embeddings/doc2vec/index.html#sparknlp.annotator.embeddings.doc2vec.Doc2VecApproach">Doc2VecApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/embeddings/Doc2VecApproach">Doc2VecApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/embeddings/Doc2VecApproach.scala">Doc2VecApproach</a></td>
         </tr>
@@ -2740,10 +2768,10 @@ and <a href="https://arxiv.org/pdf/1310.4546v1.pdf">Distributed Representations 
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -2837,7 +2865,7 @@ For training your own model, please see the documentation of that class.</p>
 
     <p><strong>Sources</strong> :</p>
 
-    <p>For the original C implementation, see https://code.google.com/p/word2vec/</p>
+    <p>For the original C implementation, see <a href="https://code.google.com/p/word2vec/">https://code.google.com/p/word2vec/</a></p>
 
     <p>For the research paper, see
 <a href="https://arxiv.org/abs/1301.3781">Efficient Estimation of Word Representations in Vector Space</a>
@@ -2850,7 +2878,7 @@ and <a href="https://arxiv.org/pdf/1310.4546v1.pdf">Distributed Representations 
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/embeddings/doc2vec/index.html#sparknlp.annotator.embeddings.doc2vec.Doc2VecModel">Doc2VecModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/embeddings/doc2vec/index.html#sparknlp.annotator.embeddings.doc2vec.Doc2VecModel">Doc2VecModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/embeddings/Doc2VecModel">Doc2VecModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/embeddings/Doc2VecModel.scala">Doc2VecModel</a></td>
         </tr>
@@ -2861,10 +2889,10 @@ and <a href="https://arxiv.org/pdf/1310.4546v1.pdf">Distributed Representations 
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -2974,7 +3002,7 @@ can be used to pre-process the text (Default: <code class="language-plaintext hi
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/base/document_assembler/index.html#sparknlp.base.document_assembler.DocumentAssembler">DocumentAssembler</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/base/document_assembler/index.html#sparknlp.base.document_assembler.DocumentAssembler">DocumentAssembler</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/DocumentAssembler">DocumentAssembler</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/DocumentAssembler.scala">DocumentAssembler</a></td>
       </tr>
@@ -2985,10 +3013,10 @@ can be used to pre-process the text (Default: <code class="language-plaintext hi
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -3077,7 +3105,7 @@ Can apply lower case normalization.</p>
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/document_normalizer/index.html#sparknlp.annotator.document_normalizer.DocumentNormalizer">DocumentNormalizer</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/document_normalizer/index.html#sparknlp.annotator.document_normalizer.DocumentNormalizer">DocumentNormalizer</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/DocumentNormalizer">DocumentNormalizer</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/DocumentNormalizer.scala">DocumentNormalizer</a></td>
       </tr>
@@ -3088,10 +3116,10 @@ Can apply lower case normalization.</p>
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -3217,7 +3245,7 @@ compatible with Spark ML functions such as LDA, K-mean, Random Forest classifier
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/base/embeddings_finisher/index.html#sparknlp.base.embeddings_finisher.EmbeddingsFinisher">EmbeddingsFinisher</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/base/embeddings_finisher/index.html#sparknlp.base.embeddings_finisher.EmbeddingsFinisher">EmbeddingsFinisher</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/EmbeddingsFinisher">EmbeddingsFinisher</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/EmbeddingsFinisher.scala">EmbeddingsFinisher</a></td>
       </tr>
@@ -3228,10 +3256,10 @@ compatible with Spark ML functions such as LDA, K-mean, Random Forest classifier
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -3362,7 +3390,7 @@ compatible with Spark ML functions such as LDA, K-mean, Random Forest classifier
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="entityruler">EntityRuler</h2>
 
@@ -3420,7 +3448,7 @@ LOCATION|Winterfell
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/er/entity_ruler/index.html#sparknlp.annotator.er.entity_ruler.EntityRulerApproach">EntityRulerApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/er/entity_ruler/index.html#sparknlp.annotator.er.entity_ruler.EntityRulerApproach">EntityRulerApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/er/EntityRulerApproach">EntityRulerApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/er/EntityRulerApproach.scala">EntityRulerApproach</a></td>
         </tr>
@@ -3431,10 +3459,10 @@ LOCATION|Winterfell
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In this example, the entities file as the form of
@@ -3554,7 +3582,7 @@ For usage and examples see the documentation of the main class.</p>
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/er/entity_ruler/index.html#sparknlp.annotator.er.entity_ruler.EntityRulerModel">EntityRulerModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/er/entity_ruler/index.html#sparknlp.annotator.er.entity_ruler.EntityRulerModel">EntityRulerModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/er/EntityRulerModel">EntityRulerModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/er/EntityRulerModel.scala">EntityRulerModel</a></td>
         </tr>
@@ -3582,7 +3610,7 @@ Pipelines. The Finisher outputs annotation(s) values into <code class="language-
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/base/finisher/index.html#sparknlp.base.finisher.Finisher">Finisher</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/base/finisher/index.html#sparknlp.base.finisher.Finisher">Finisher</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/Finisher">Finisher</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/Finisher.scala">Finisher</a></td>
       </tr>
@@ -3593,10 +3621,10 @@ Pipelines. The Finisher outputs annotation(s) values into <code class="language-
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -3706,7 +3734,7 @@ automatically. The specific models can also be set with <code class="language-pl
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/graph_extraction/index.html#sparknlp.annotator.graph_extraction.GraphExtraction">GraphExtraction</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/graph_extraction/index.html#sparknlp.annotator.graph_extraction.GraphExtraction">GraphExtraction</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/GraphExtraction">GraphExtraction</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/GraphExtraction.scala">GraphExtraction</a></td>
       </tr>
@@ -3717,10 +3745,10 @@ automatically. The specific models can also be set with <code class="language-pl
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -3879,7 +3907,7 @@ automatically. The specific models can also be set with <code class="language-pl
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/base/graph_finisher/index.html#sparknlp.base.graph_finisher.GraphFinisher">GraphFinisher</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/base/graph_finisher/index.html#sparknlp.base.graph_finisher.GraphFinisher">GraphFinisher</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/GraphFinisher">GraphFinisher</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/GraphFinisher.scala">GraphFinisher</a></td>
       </tr>
@@ -3890,10 +3918,10 @@ automatically. The specific models can also be set with <code class="language-pl
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -3957,7 +3985,7 @@ is needed to process images.</p>
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/base/image_assembler/index.html#sparknlp.base.image_assembler.ImageAssembler">ImageAssembler</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/base/image_assembler/index.html#sparknlp.base.image_assembler.ImageAssembler">ImageAssembler</a></td>
         <td><strong>Scala API:</strong> <a href="/api/com/johnsnowlabs/nlp/ImageAssembler">ImageAssembler</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/ImageAssembler.scala">ImageAssembler</a></td>
       </tr>
@@ -3968,10 +3996,10 @@ is needed to process images.</p>
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -4066,7 +4094,7 @@ And the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/ld_dl/language_detector_dl/index.html#sparknlp.annotator.ld_dl.language_detector_dl.LanguageDetectorDL">LanguageDetectorDL</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/ld_dl/language_detector_dl/index.html#sparknlp.annotator.ld_dl.language_detector_dl.LanguageDetectorDL">LanguageDetectorDL</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ld/dl/LanguageDetectorDL">LanguageDetectorDL</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ld/dl/LanguageDetectorDL.scala">LanguageDetectorDL</a></td>
       </tr>
@@ -4077,10 +4105,10 @@ And the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -4161,7 +4189,7 @@ And the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="lemmatizer">Lemmatizer</h2>
 
@@ -4187,7 +4215,7 @@ For extended examples of usage, see the <a href="https://github.com/JohnSnowLabs
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/lemmatizer/index.html#sparknlp.annotator.lemmatizer.Lemmatizer">Lemmatizer</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/lemmatizer/index.html#sparknlp.annotator.lemmatizer.Lemmatizer">Lemmatizer</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/Lemmatizer">Lemmatizer</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/Lemmatizer.scala">Lemmatizer</a></td>
         </tr>
@@ -4198,10 +4226,10 @@ For extended examples of usage, see the <a href="https://github.com/JohnSnowLabs
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In this example, the lemma dictionary `lemmas_small.txt` has the form of
@@ -4329,7 +4357,7 @@ For available pretrained models please see the <a href="https://nlp.johnsnowlabs
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/lemmatizer/index.html#sparknlp.annotator.lemmatizer.LemmatizerModel">LemmatizerModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/lemmatizer/index.html#sparknlp.annotator.lemmatizer.LemmatizerModel">LemmatizerModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/LemmatizerModel">LemmatizerModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/LemmatizerModel.scala">LemmatizerModel</a></td>
         </tr>
@@ -4340,7 +4368,7 @@ For available pretrained models please see the <a href="https://nlp.johnsnowlabs
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="multiclassifierdl">MultiClassifierDL</h2>
 
@@ -4385,7 +4413,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/classifier_dl/multi_classifier_dl/index.html#sparknlp.annotator.classifier_dl.multi_classifier_dl.MultiClassifierDLApproach">MultiClassifierDLApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/classifier_dl/multi_classifier_dl/index.html#sparknlp.annotator.classifier_dl.multi_classifier_dl.MultiClassifierDLApproach">MultiClassifierDLApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/classifier/dl/MultiClassifierDLApproach">MultiClassifierDLApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/classifier/dl/MultiClassifierDLApproach.scala">MultiClassifierDLApproach</a></td>
         </tr>
@@ -4396,10 +4424,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In this example, the training data has the form
@@ -4576,7 +4604,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/classifier_dl/multi_classifier_dl/index.html#sparknlp.annotator.classifier_dl.multi_classifier_dl.MultiClassifierDLModel">MultiClassifierDLModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/classifier_dl/multi_classifier_dl/index.html#sparknlp.annotator.classifier_dl.multi_classifier_dl.MultiClassifierDLModel">MultiClassifierDLModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/classifier/dl/MultiClassifierDLModel">MultiClassifierDLModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/classifier/dl/MultiClassifierDLModel.scala">MultiClassifierDLModel</a></td>
         </tr>
@@ -4587,10 +4615,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -4706,7 +4734,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/matcher/multi_date_matcher/index.html#sparknlp.annotator.matcher.multi_date_matcher.MultiDateMatcher">MultiDateMatcher</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/matcher/multi_date_matcher/index.html#sparknlp.annotator.matcher.multi_date_matcher.MultiDateMatcher">MultiDateMatcher</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/MultiDateMatcher">MultiDateMatcher</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/MultiDateMatcher.scala">MultiDateMatcher</a></td>
       </tr>
@@ -4717,10 +4745,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -4819,7 +4847,7 @@ section.</p>
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/base/multi_document_assembler/index.html#sparknlp.base.multi_document_assembler.MultiDocumentAssembler">MultiDocumentAssembler</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/base/multi_document_assembler/index.html#sparknlp.base.multi_document_assembler.MultiDocumentAssembler">MultiDocumentAssembler</a></td>
         <td><strong>Scala API:</strong> <a href="/api/com/johnsnowlabs/nlp/MultiDocumentAssembler">MultiDocumentAssembler</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/MultiDocumentAssembler.scala">MultiDocumentAssembler</a></td>
       </tr>
@@ -4830,10 +4858,10 @@ section.</p>
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -4930,7 +4958,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/n_gram_generator/index.html#sparknlp.annotator.n_gram_generator.NGramGenerator">NGramGenerator</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/n_gram_generator/index.html#sparknlp.annotator.n_gram_generator.NGramGenerator">NGramGenerator</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/NGramGenerator">NGramGenerator</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/NGramGenerator.scala">NGramGenerator</a></td>
       </tr>
@@ -4941,10 +4969,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -5060,7 +5088,7 @@ Chunks with no associated entity (tagged “O”) are filtered.</p>
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/ner/ner_converter/index.html#sparknlp.annotator.ner.ner_converter.NerConverter">NerConverter</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/ner/ner_converter/index.html#sparknlp.annotator.ner.ner_converter.NerConverter">NerConverter</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ner/NerConverter">NerConverter</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ner/NerConverter.scala">NerConverter</a></td>
       </tr>
@@ -5071,10 +5099,10 @@ Chunks with no associated entity (tagged “O”) are filtered.</p>
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -5154,7 +5182,7 @@ Chunks with no associated entity (tagged “O”) are filtered.</p>
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="nercrf">NerCrf</h2>
 
@@ -5194,7 +5222,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/ner/ner_crf/index.html#sparknlp.annotator.ner.ner_crf.NerCrfApproach">NerCrfApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/ner/ner_crf/index.html#sparknlp.annotator.ner.ner_crf.NerCrfApproach">NerCrfApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ner/crf/NerCrfApproach">NerCrfApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ner/crf/NerCrfApproach.scala">NerCrfApproach</a></td>
         </tr>
@@ -5205,10 +5233,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This CoNLL dataset already includes the sentence, token, pos and label column with their respective annotator types.
@@ -5330,7 +5358,7 @@ For available pretrained models please see the <a href="https://nlp.johnsnowlabs
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/ner/ner_crf/index.html#sparknlp.annotator.ner.ner_crf.NerCrfModel">NerCrfModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/ner/ner_crf/index.html#sparknlp.annotator.ner.ner_crf.NerCrfModel">NerCrfModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ner/crf/NerCrfModel">NerCrfModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ner/crf/NerCrfModel.scala">NerCrfModel</a></td>
         </tr>
@@ -5341,7 +5369,7 @@ For available pretrained models please see the <a href="https://nlp.johnsnowlabs
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="nerdl">NerDL</h2>
 
@@ -5380,7 +5408,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/ner/ner_dl/index.html#sparknlp.annotator.ner.ner_dl.NerDLApproach">NerDLApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/ner/ner_dl/index.html#sparknlp.annotator.ner.ner_dl.NerDLApproach">NerDLApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ner/dl/NerDLApproach">NerDLApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ner/dl/NerDLApproach.scala">NerDLApproach</a></td>
         </tr>
@@ -5391,10 +5419,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -5532,7 +5560,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/ner/ner_dl/index.html#sparknlp.annotator.ner.ner_dl.NerDLModel">NerDLModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/ner/ner_dl/index.html#sparknlp.annotator.ner.ner_dl.NerDLModel">NerDLModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ner/dl/NerDLModel">NerDLModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ner/dl/NerDLModel.scala">NerDLModel</a></td>
         </tr>
@@ -5559,7 +5587,7 @@ The strings specified with <code class="language-plaintext highlighter-rouge">se
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/ner/ner_overwriter/index.html#sparknlp.annotator.ner.ner_overwriter.NerOverwriter">NerOverwriter</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/ner/ner_overwriter/index.html#sparknlp.annotator.ner.ner_overwriter.NerOverwriter">NerOverwriter</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ner/NerOverwriter">NerOverwriter</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ner/NerOverwriter.scala">NerOverwriter</a></td>
       </tr>
@@ -5570,10 +5598,10 @@ The strings specified with <code class="language-plaintext highlighter-rouge">se
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -5749,7 +5777,7 @@ The strings specified with <code class="language-plaintext highlighter-rouge">se
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="normalizer">Normalizer</h2>
 
@@ -5772,7 +5800,7 @@ Removes all dirty characters from text following a regex pattern and transforms 
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/normalizer/index.html#sparknlp.annotator.normalizer.Normalizer">Normalizer</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/normalizer/index.html#sparknlp.annotator.normalizer.Normalizer">Normalizer</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/Normalizer">Normalizer</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/Normalizer.scala">Normalizer</a></td>
         </tr>
@@ -5783,10 +5811,10 @@ Removes all dirty characters from text following a regex pattern and transforms 
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -5880,7 +5908,7 @@ Removes all dirty characters from text following a regex pattern and transforms 
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/normalizer/index.html#sparknlp.annotator.normalizer.NormalizerModel">NormalizerModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/normalizer/index.html#sparknlp.annotator.normalizer.NormalizerModel">NormalizerModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/NormalizerModel">NormalizerModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/NormalizerModel.scala">NormalizerModel</a></td>
         </tr>
@@ -5891,7 +5919,7 @@ Removes all dirty characters from text following a regex pattern and transforms 
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="norvigsweeting-spellchecker">NorvigSweeting Spellchecker</h2>
 
@@ -5923,7 +5951,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/spell_check/norvig_sweeting/index.html#sparknlp.annotator.spell_check.norvig_sweeting.NorvigSweetingApproach">NorvigSweetingApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/spell_check/norvig_sweeting/index.html#sparknlp.annotator.spell_check.norvig_sweeting.NorvigSweetingApproach">NorvigSweetingApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/spell/norvig/NorvigSweetingApproach">NorvigSweetingApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/spell/norvig/NorvigSweetingApproach.scala">NorvigSweetingApproach</a></td>
         </tr>
@@ -5934,10 +5962,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In this example, the dictionary `"words.txt"` has the form of
@@ -6055,7 +6083,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/spell_check/norvig_sweeting/index.html#sparknlp.annotator.spell_check.norvig_sweeting.NorvigSweetingModel">NorvigSweetingModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/spell_check/norvig_sweeting/index.html#sparknlp.annotator.spell_check.norvig_sweeting.NorvigSweetingModel">NorvigSweetingModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/spell/norvig/NorvigSweetingModel">NorvigSweetingModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/spell/norvig/NorvigSweetingModel.scala">NorvigSweetingModel</a></td>
         </tr>
@@ -6066,7 +6094,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="postagger-part-of-speech-tagger">POSTagger (Part of speech tagger)</h2>
 
@@ -6110,7 +6138,7 @@ and <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/test/scal
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/pos/perceptron/index.html#sparknlp.annotator.pos.perceptron.PerceptronApproach">PerceptronApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/pos/perceptron/index.html#sparknlp.annotator.pos.perceptron.PerceptronApproach">PerceptronApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/pos/perceptron/PerceptronApproach">PerceptronApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/pos/perceptron/PerceptronApproach.scala">PerceptronApproach</a></td>
         </tr>
@@ -6121,10 +6149,10 @@ and <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/test/scal
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -6252,7 +6280,7 @@ Additionally, pretrained pipelines are available for this module, see <a href="h
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/pos/perceptron/index.html#sparknlp.annotator.pos.perceptron.PerceptronModel">PerceptronModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/pos/perceptron/index.html#sparknlp.annotator.pos.perceptron.PerceptronModel">PerceptronModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/pos/perceptron/PerceptronModel">PerceptronModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/pos/perceptron/PerceptronModel.scala">PerceptronModel</a></td>
         </tr>
@@ -6263,7 +6291,7 @@ Additionally, pretrained pipelines are available for this module, see <a href="h
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="recursivetokenizer">RecursiveTokenizer</h2>
 
@@ -6294,7 +6322,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/token/recursive_tokenizer/index.html#sparknlp.annotator.token.recursive_tokenizer.RecursiveTokenizer">RecursiveTokenizer</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/token/recursive_tokenizer/index.html#sparknlp.annotator.token.recursive_tokenizer.RecursiveTokenizer">RecursiveTokenizer</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/RecursiveTokenizer">RecursiveTokenizer</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/RecursiveTokenizer.scala">RecursiveTokenizer</a></td>
         </tr>
@@ -6305,10 +6333,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -6387,7 +6415,7 @@ For usage and examples see the documentation of the main class.</p>
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/token/recursive_tokenizer/index.html#sparknlp.annotator.token.recursive_tokenizer.RecursiveTokenizerModel">RecursiveTokenizerModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/token/recursive_tokenizer/index.html#sparknlp.annotator.token.recursive_tokenizer.RecursiveTokenizerModel">RecursiveTokenizerModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/RecursiveTokenizerModel">RecursiveTokenizerModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/RecursiveTokenizerModel.scala">RecursiveTokenizerModel</a></td>
         </tr>
@@ -6398,7 +6426,7 @@ For usage and examples see the documentation of the main class.</p>
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="regexmatcher">RegexMatcher</h2>
 
@@ -6426,7 +6454,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/matcher/regex_matcher/index.html#sparknlp.annotator.matcher.regex_matcher.RegexMatcher">RegexMatcher</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/matcher/regex_matcher/index.html#sparknlp.annotator.matcher.regex_matcher.RegexMatcher">RegexMatcher</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/RegexMatcher">RegexMatcher</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/RegexMatcher.scala">RegexMatcher</a></td>
         </tr>
@@ -6437,10 +6465,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -6536,7 +6564,7 @@ For usage and examples see the documentation of the main class.</p>
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/matcher/regex_matcher/index.html#sparknlp.annotator.matcher.regex_matcher.RegexMatcherModel">RegexMatcherModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/matcher/regex_matcher/index.html#sparknlp.annotator.matcher.regex_matcher.RegexMatcherModel">RegexMatcherModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/RegexMatcherModel">RegexMatcherModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/RegexMatcherModel.scala">RegexMatcherModel</a></td>
         </tr>
@@ -6563,7 +6591,7 @@ By default this pattern is <code class="language-plaintext highlighter-rouge">\s
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/token/regex_tokenizer/index.html#sparknlp.annotator.token.regex_tokenizer.RegexTokenizer">RegexTokenizer</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/token/regex_tokenizer/index.html#sparknlp.annotator.token.regex_tokenizer.RegexTokenizer">RegexTokenizer</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/RegexTokenizer">RegexTokenizer</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/RegexTokenizer.scala">RegexTokenizer</a></td>
       </tr>
@@ -6574,10 +6602,10 @@ By default this pattern is <code class="language-plaintext highlighter-rouge">\s
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -6695,7 +6723,7 @@ if <code class="language-plaintext highlighter-rouge">explodeSentences</code> is
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/sentence/sentence_detector/index.html#sparknlp.annotator.sentence.sentence_detector.SentenceDetector">SentenceDetector</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/sentence/sentence_detector/index.html#sparknlp.annotator.sentence.sentence_detector.SentenceDetector">SentenceDetector</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/sbd/pragmatic/SentenceDetector">SentenceDetector</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/sbd/pragmatic/SentenceDetector.scala">SentenceDetector</a></td>
       </tr>
@@ -6706,10 +6734,10 @@ if <code class="language-plaintext highlighter-rouge">explodeSentences</code> is
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -6782,7 +6810,7 @@ if <code class="language-plaintext highlighter-rouge">explodeSentences</code> is
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="sentencedetectordl">SentenceDetectorDL</h2>
 
@@ -6816,7 +6844,7 @@ if <code class="language-plaintext highlighter-rouge">explodeSentences</code> is
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/sentence/sentence_detector_dl/index.html#sparknlp.annotator.sentence.sentence_detector_dl.SentenceDetectorDLApproach">SentenceDetectorDLApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/sentence/sentence_detector_dl/index.html#sparknlp.annotator.sentence.sentence_detector_dl.SentenceDetectorDLApproach">SentenceDetectorDLApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/sentence_detector_dl/SentenceDetectorDLApproach">SentenceDetectorDLApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/sentence_detector_dl/SentenceDetectorDLApproach.scala">SentenceDetectorDLApproach</a></td>
         </tr>
@@ -6827,10 +6855,10 @@ if <code class="language-plaintext highlighter-rouge">explodeSentences</code> is
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The training process needs data, where each data point is a sentence.
@@ -6929,7 +6957,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/sentence/sentence_detector_dl/index.html#sparknlp.annotator.sentence.sentence_detector_dl.SentenceDetectorDLModel">SentenceDetectorDLModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/sentence/sentence_detector_dl/index.html#sparknlp.annotator.sentence.sentence_detector_dl.SentenceDetectorDLModel">SentenceDetectorDLModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/sentence_detector_dl/SentenceDetectorDLModel">SentenceDetectorDLModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/sentence_detector_dl/SentenceDetectorDLModel.scala">SentenceDetectorDLModel</a></td>
         </tr>
@@ -6956,10 +6984,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
   <p><strong>TIP:</strong> Here is how you can explode and convert these embeddings into <code class="language-plaintext highlighter-rouge">Vectors</code> or what’s known as <code class="language-plaintext highlighter-rouge">Feature</code> column so it can be used in Spark ML regression or clustering functions:</p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">org.apache.spark.ml.linal</span> <span class="kn">import</span> <span class="n">Vector</span><span class="p">,</span> <span class="n">Vectors</span>
@@ -6999,7 +7027,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/embeddings/sentence_embeddings/index.html#sparknlp.annotator.embeddings.sentence_embeddings.SentenceEmbeddings">SentenceEmbeddings</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/embeddings/sentence_embeddings/index.html#sparknlp.annotator.embeddings.sentence_embeddings.SentenceEmbeddings">SentenceEmbeddings</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/embeddings/SentenceEmbeddings">SentenceEmbeddings</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/embeddings/SentenceEmbeddings.scala">SentenceEmbeddings</a></td>
       </tr>
@@ -7010,10 +7038,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -7121,7 +7149,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="sentimentdl">SentimentDL</h2>
 
@@ -7160,7 +7188,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/sentiment/sentiment_dl/index.html#sparknlp.annotator.sentiment.sentiment_dl.SentimentDLApproach">SentimentDLApproach</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/sentiment/sentiment_dl/index.html#sparknlp.annotator.sentiment.sentiment_dl.SentimentDLApproach">SentimentDLApproach</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/classifier/dl/SentimentDLApproach">SentimentDLApproach</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/classifier/dl/SentimentDLApproach.scala">SentimentDLApproach</a></td>
         </tr>
@@ -7171,10 +7199,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -7298,7 +7326,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/sentiment/sentiment_dl/index.html#sparknlp.annotator.sentiment.sentiment_dl.SentimentDLModel">SentimentDLModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/sentiment/sentiment_dl/index.html#sparknlp.annotator.sentiment.sentiment_dl.SentimentDLModel">SentimentDLModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/classifier/dl/SentimentDLModel">SentimentDLModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/classifier/dl/SentimentDLModel.scala">SentimentDLModel</a></td>
         </tr>
@@ -7309,7 +7337,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 </div>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <h2 id="sentimentdetector">SentimentDetector</h2>
 
@@ -7339,7 +7367,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/sentiment/sentiment_detector/index.html#sparknlp.annotator.sentiment.sentiment_detector.SentimentDetector">SentimentDetector</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/sentiment/sentiment_detector/index.html#sparknlp.annotator.sentiment.sentiment_detector.SentimentDetector">SentimentDetector</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/sda/pragmatic/SentimentDetector">SentimentDetector</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/sda/pragmatic/SentimentDetector.scala">SentimentDetector</a></td>
         </tr>
@@ -7350,10 +7378,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In this example, the dictionary `default-sentiment-dict.txt` has the form of
@@ -7501,7 +7529,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/sentiment/sentiment_detector/index.html#sparknlp.annotator.sentiment.sentiment_detector.SentimentDetectorModel">SentimentDetectorModel</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/sentiment/sentiment_detector/index.html#sparknlp.annotator.sentiment.sentiment_detector.SentimentDetectorModel">SentimentDetectorModel</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/sda/pragmatic/SentimentDetectorModel">SentimentDetectorModel</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/sda/pragmatic/SentimentDetectorModel.scala">SentimentDetectorModel</a></td>
         </tr>
@@ -7526,7 +7554,7 @@ For extended examples of usage, see the <a href="https://github.com/JohnSnowLabs
   <table>
     <tbody>
       <tr>
-        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/stemmer/index.html#sparknlp.annotator.stemmer.Stemmer">Stemmer</a></td>
+        <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/stemmer/index.html#sparknlp.annotator.stemmer.Stemmer">Stemmer</a></td>
         <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/Stemmer">Stemmer</a></td>
         <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/Stemmer.scala">Stemmer</a></td>
       </tr>
@@ -7537,10 +7565,10 @@ For extended examples of usage, see the <a href="https://github.com/JohnSnowLabs
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
       <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
       <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -7646,10 +7674,10 @@ and <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/scal
 If you need to <code class="language-plaintext highlighter-rouge">setStopWords</code> from a text file, you can first read and convert it into an array of string as follows.</p>
   </blockquote>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># your stop words text file, each line is one stop word
@@ -7694,7 +7722,7 @@ If you need to <code class="language-plaintext highlighter-rouge">setStopWords</
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/stop_words_cleaner/index.html#sparknlp.annotator.stop_words_cleaner.StopWordsCleaner">StopWordsCleaner</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/stop_words_cleaner/index.html#sparknlp.annotator.stop_words_cleaner.StopWordsCleaner">StopWordsCleaner</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/StopWordsCleaner">StopWordsCleaner</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/StopWordsCleaner.scala">StopWordsCleaner</a></td>
         </tr>
@@ -7705,10 +7733,10 @@ If you need to <code class="language-plaintext highlighter-rouge">setStopWords</
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -7807,7 +7835,7 @@ If you need to <code class="language-plaintext highlighter-rouge">setStopWords</
 
   </div>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <h2 id="symmetricdelete-spellchecker">SymmetricDelete Spellchecker</h2>
 
@@ -7834,7 +7862,7 @@ Retrieves tokens and utilizes distance metrics to compute possible derived words
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/spell_check/symmetric_delete/index.html#sparknlp.annotator.spell_check.symmetric_delete.SymmetricDeleteApproach">SymmetricDeleteApproach</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/spell_check/symmetric_delete/index.html#sparknlp.annotator.spell_check.symmetric_delete.SymmetricDeleteApproach">SymmetricDeleteApproach</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/spell/symmetric/SymmetricDeleteApproach">SymmetricDeleteApproach</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/spell/symmetric/SymmetricDeleteApproach.scala">SymmetricDeleteApproach</a></td>
           </tr>
@@ -7845,10 +7873,10 @@ Retrieves tokens and utilizes distance metrics to compute possible derived words
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
           <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
           <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -7960,7 +7988,7 @@ For available pretrained models please see the <a href="https://nlp.johnsnowlabs
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/spell_check/symmetric_delete/index.html#sparknlp.annotator.spell_check.symmetric_delete.SymmetricDeleteModel">SymmetricDeleteModel</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/spell_check/symmetric_delete/index.html#sparknlp.annotator.spell_check.symmetric_delete.SymmetricDeleteModel">SymmetricDeleteModel</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/spell/symmetric/SymmetricDeleteModel">SymmetricDeleteModel</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/spell/symmetric/SymmetricDeleteModel.scala">SymmetricDeleteModel</a></td>
           </tr>
@@ -7971,7 +7999,7 @@ For available pretrained models please see the <a href="https://nlp.johnsnowlabs
 
   </div>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <h2 id="textmatcher">TextMatcher</h2>
 
@@ -7996,7 +8024,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/matcher/text_matcher/index.html#sparknlp.annotator.matcher.text_matcher.TextMatcher">TextMatcher</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/matcher/text_matcher/index.html#sparknlp.annotator.matcher.text_matcher.TextMatcher">TextMatcher</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/TextMatcher">TextMatcher</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/TextMatcher.scala">TextMatcher</a></td>
           </tr>
@@ -8007,10 +8035,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
           <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
           <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -8118,7 +8146,7 @@ For usage and examples see the documentation of the main class.</p>
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/matcher/text_matcher/index.html#sparknlp.annotator.matcher.text_matcher.TextMatcherModel">TextMatcherModel</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/matcher/text_matcher/index.html#sparknlp.annotator.matcher.text_matcher.TextMatcherModel">TextMatcherModel</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/TextMatcherModel">TextMatcherModel</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/TextMatcherModel.scala">TextMatcherModel</a></td>
           </tr>
@@ -8144,7 +8172,7 @@ For usage and examples see the documentation of the main class.</p>
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/token/token2_chunk/index.html#sparknlp.annotator.token.token2_chunk.Token2Chunk">Token2Chunk</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/token/token2_chunk/index.html#sparknlp.annotator.token.token2_chunk.Token2Chunk">Token2Chunk</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/Token2Chunk">Token2Chunk</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/Token2Chunk.scala">Token2Chunk</a></td>
         </tr>
@@ -8155,10 +8183,10 @@ For usage and examples see the documentation of the main class.</p>
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -8261,7 +8289,7 @@ Requires <code class="language-plaintext highlighter-rouge">DOCUMENT</code> and 
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/base/token_assembler/index.html#sparknlp.base.token_assembler.TokenAssembler">TokenAssembler</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/base/token_assembler/index.html#sparknlp.base.token_assembler.TokenAssembler">TokenAssembler</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/TokenAssembler">TokenAssembler</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/TokenAssembler.scala">TokenAssembler</a></td>
         </tr>
@@ -8272,10 +8300,10 @@ Requires <code class="language-plaintext highlighter-rouge">DOCUMENT</code> and 
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -8395,7 +8423,7 @@ Requires <code class="language-plaintext highlighter-rouge">DOCUMENT</code> and 
 
   </div>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <h2 id="tokenizer">Tokenizer</h2>
 
@@ -8427,7 +8455,7 @@ and <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/scal
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/token/tokenizer/index.html#sparknlp.annotator.token.tokenizer.Tokenizer">Tokenizer</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/token/tokenizer/index.html#sparknlp.annotator.token.tokenizer.Tokenizer">Tokenizer</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/Tokenizer">Tokenizer</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/Tokenizer.scala">Tokenizer</a></td>
           </tr>
@@ -8438,10 +8466,10 @@ and <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/scal
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
           <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
           <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -8505,7 +8533,7 @@ and <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/scal
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/token/tokenizer/index.html#sparknlp.annotator.token.tokenizer.TokenizerModel">TokenizerModel</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/token/tokenizer/index.html#sparknlp.annotator.token.tokenizer.TokenizerModel">TokenizerModel</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/TokenizerModel">TokenizerModel</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/TokenizerModel.scala">TokenizerModel</a></td>
           </tr>
@@ -8516,7 +8544,7 @@ and <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/scal
 
   </div>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <h2 id="typeddependencyparser">TypedDependencyParser</h2>
 
@@ -8554,7 +8582,7 @@ The required training data can be set in two different ways (only one can be cho
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/dependency/typed_dependency_parser/index.html#sparknlp.annotator.dependency.typed_dependency_parser.TypedDependencyParserApproach">TypedDependencyParserApproach</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/dependency/typed_dependency_parser/index.html#sparknlp.annotator.dependency.typed_dependency_parser.TypedDependencyParserApproach">TypedDependencyParserApproach</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/parser/typdep/TypedDependencyParserApproach">TypedDependencyParserApproach</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/parser/typdep/TypedDependencyParserApproach.scala">TypedDependencyParserApproach</a></td>
           </tr>
@@ -8565,10 +8593,10 @@ The required training data can be set in two different ways (only one can be cho
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
           <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
           <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -8700,7 +8728,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/test/
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/dependency/typed_dependency_parser/index.html#sparknlp.annotator.dependency.typed_dependency_parser.TypedDependencyParserModel">TypedDependencyParserModel</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/dependency/typed_dependency_parser/index.html#sparknlp.annotator.dependency.typed_dependency_parser.TypedDependencyParserModel">TypedDependencyParserModel</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/parser/typdep/TypedDependencyParserModel">TypedDependencyParserModel</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/parser/typdep/TypedDependencyParserModel.scala">TypedDependencyParserModel</a></td>
           </tr>
@@ -8711,7 +8739,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/test/
 
   </div>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <h2 id="viveknsentiment">ViveknSentiment</h2>
 
@@ -8742,7 +8770,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/test/
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/sentiment/vivekn_sentiment/index.html#sparknlp.annotator.sentiment.vivekn_sentiment.ViveknSentimentApproach">ViveknSentimentApproach</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/sentiment/vivekn_sentiment/index.html#sparknlp.annotator.sentiment.vivekn_sentiment.ViveknSentimentApproach">ViveknSentimentApproach</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/sda/vivekn/ViveknSentimentApproach">ViveknSentimentApproach</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/sda/vivekn/ViveknSentimentApproach.scala">ViveknSentimentApproach</a></td>
           </tr>
@@ -8753,10 +8781,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
           <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
           <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -8897,7 +8925,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/test/
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/sentiment/vivekn_sentiment/index.html#sparknlp.annotator.sentiment.vivekn_sentiment.ViveknSentimentModel">ViveknSentimentModel</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/sentiment/vivekn_sentiment/index.html#sparknlp.annotator.sentiment.vivekn_sentiment.ViveknSentimentModel">ViveknSentimentModel</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/sda/vivekn/ViveknSentimentModel">ViveknSentimentModel</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/sda/vivekn/ViveknSentimentModel.scala">ViveknSentimentModel</a></td>
           </tr>
@@ -8908,7 +8936,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/test/
 
   </div>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <h2 id="word2vec">Word2Vec</h2>
 
@@ -8933,7 +8961,7 @@ method to train the model. The variable names in the implementation match the or
 
       <p><strong>Sources</strong> :</p>
 
-      <p>For the original C implementation, see https://code.google.com/p/word2vec/</p>
+      <p>For the original C implementation, see <a href="https://code.google.com/p/word2vec/">https://code.google.com/p/word2vec/</a></p>
 
       <p>For the research paper, see
 <a href="https://arxiv.org/abs/1301.3781">Efficient Estimation of Word Representations in Vector Space</a>
@@ -8946,7 +8974,7 @@ and <a href="https://arxiv.org/pdf/1310.4546v1.pdf">Distributed Representations 
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/embeddings/word2vec/index.html#sparknlp.annotator.embeddings.word2vec.Word2VecApproach">Word2VecApproach</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/embeddings/word2vec/index.html#sparknlp.annotator.embeddings.word2vec.Word2VecApproach">Word2VecApproach</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/embeddings/Word2VecApproach">Word2VecApproach</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/embeddings/Word2VecApproach.scala">Word2VecApproach</a></td>
           </tr>
@@ -8957,10 +8985,10 @@ and <a href="https://arxiv.org/pdf/1310.4546v1.pdf">Distributed Representations 
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
           <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
           <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -9054,7 +9082,7 @@ For training your own model, please see the documentation of that class.</p>
 
       <p><strong>Sources</strong> :</p>
 
-      <p>For the original C implementation, see https://code.google.com/p/word2vec/</p>
+      <p>For the original C implementation, see <a href="https://code.google.com/p/word2vec/">https://code.google.com/p/word2vec/</a></p>
 
       <p>For the research paper, see
 <a href="https://arxiv.org/abs/1301.3781">Efficient Estimation of Word Representations in Vector Space</a>
@@ -9067,7 +9095,7 @@ and <a href="https://arxiv.org/pdf/1310.4546v1.pdf">Distributed Representations 
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/embeddings/word2vec/index.html#sparknlp.annotator.embeddings.word2vec.Word2VecModel">Word2VecModel</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/embeddings/word2vec/index.html#sparknlp.annotator.embeddings.word2vec.Word2VecModel">Word2VecModel</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/embeddings/Word2VecModel">Word2VecModel</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/embeddings/Word2VecModel.scala">Word2VecModel</a></td>
           </tr>
@@ -9078,10 +9106,10 @@ and <a href="https://arxiv.org/pdf/1310.4546v1.pdf">Distributed Representations 
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
           <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
           <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -9171,7 +9199,7 @@ and <a href="https://arxiv.org/pdf/1310.4546v1.pdf">Distributed Representations 
 
   </div>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <h2 id="wordembeddings">WordEmbeddings</h2>
 
@@ -9209,7 +9237,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/embeddings/word_embeddings/index.html#sparknlp.annotator.embeddings.word_embeddings.WordEmbeddings">WordEmbeddings</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/embeddings/word_embeddings/index.html#sparknlp.annotator.embeddings.word_embeddings.WordEmbeddings">WordEmbeddings</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/embeddings/WordEmbeddings">WordEmbeddings</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/embeddings/WordEmbeddings.scala">WordEmbeddings</a></td>
           </tr>
@@ -9220,10 +9248,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
           <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
           <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -9386,7 +9414,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/embeddings/word_embeddings/index.html#sparknlp.annotator.embeddings.word_embeddings.WordEmbeddingsModel">WordEmbeddingsModel</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/embeddings/word_embeddings/index.html#sparknlp.annotator.embeddings.word_embeddings.WordEmbeddingsModel">WordEmbeddingsModel</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/embeddings/WordEmbeddingsModel">WordEmbeddingsModel</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/embeddings/WordEmbeddingsModel.scala">WordEmbeddingsModel</a></td>
           </tr>
@@ -9397,7 +9425,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
   </div>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <h2 id="wordsegmenter">WordSegmenter</h2>
 
@@ -9433,7 +9461,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/ws/word_segmenter/index.html#sparknlp.annotator.ws.word_segmenter.WordSegmenterApproach">WordSegmenterApproach</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/ws/word_segmenter/index.html#sparknlp.annotator.ws.word_segmenter.WordSegmenterApproach">WordSegmenterApproach</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ws/WordSegmenterApproach">WordSegmenterApproach</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ws/WordSegmenterApproach.scala">WordSegmenterApproach</a></td>
           </tr>
@@ -9444,10 +9472,10 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
           <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
           <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In this example, `"chinese_train.utf8"` is in the form of
@@ -9554,7 +9582,7 @@ and the <a href="https://github.com/JohnSnowLabs/spark-nlp/blob/master/src/test/
       <table>
         <tbody>
           <tr>
-            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/ws/word_segmenter/index.html#sparknlp.annotator.ws.word_segmenter.WordSegmenterModel">WordSegmenterModel</a></td>
+            <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/ws/word_segmenter/index.html#sparknlp.annotator.ws.word_segmenter.WordSegmenterModel">WordSegmenterModel</a></td>
             <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/ws/WordSegmenterModel">WordSegmenterModel</a></td>
             <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/ws/WordSegmenterModel.scala">WordSegmenterModel</a></td>
           </tr>
@@ -9611,7 +9639,7 @@ texts of different sizes, languages, and domains.</em></p>
     <table>
       <tbody>
         <tr>
-          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/sparknlp/annotator/keyword_extraction/yake_keyword_extraction/index.html#sparknlp.annotator.keyword_extraction.yake_keyword_extraction.YakeKeywordExtraction">YakeKeywordExtraction</a></td>
+          <td><strong>Python API:</strong> <a href="/api/python/reference/autosummary/python/sparknlp/annotator/keyword_extraction/yake_keyword_extraction/index.html#sparknlp.annotator.keyword_extraction.yake_keyword_extraction.YakeKeywordExtraction">YakeKeywordExtraction</a></td>
           <td><strong>Scala API:</strong> <a href="https://nlp.johnsnowlabs.com/api/com/johnsnowlabs/nlp/annotators/keyword/yake/YakeKeywordExtraction">YakeKeywordExtraction</a></td>
           <td><strong>Source:</strong> <a href="https://github.com/JohnSnowLabs/spark-nlp/tree/master/src/main/scala/com/johnsnowlabs/nlp/annotators/keyword.yake/YakeKeywordExtraction.scala">YakeKeywordExtraction</a></td>
         </tr>
@@ -9622,10 +9650,10 @@ texts of different sizes, languages, and domains.</em></p>
 
 <summary class="button"><b>Show Example</b></summary>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
         <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -9754,7 +9782,7 @@ texts of different sizes, languages, and domains.</em></p>
 
 <script>
 
-
+/* 
 jQuery(document).ready(function(){  
     $( ".scala-button" ).click(function() {
         $(this).closest( ".tabs-box" ).find(".scala-button").removeClass('code-selector-un-active').addClass( "code-selector-active" );        
@@ -9794,34 +9822,248 @@ jQuery(document).ready(function(){
         $(this).closest( ".tabs-box" ).find( ".language-python, .language-scala" ).hide();
         $(this).closest( ".tabs-box" ).find( ".nlu-block" ).show();
     });
-});
+}); */
 
-function togglePython1() {
+/* function togglePython1() {
 
     //set current button to active class and remove unactive class
     $( ".python-button" ).addClass( "code-selector-active" );
 
 
     //toggle language snippets
-    $( ".tabs-box .language-python" ).show() 
-    $( ".tabs-box .nlu-block" ).hide()
-    $( ".tabs-box .language-scala" ).hide()
+    $( ".tabs-box .language-python" ).show();
+    $( ".tabs-box .nlu-block" ).hide();
+    $( ".tabs-box .language-scala" ).hide();
 }
 
 function defer(method) { //wait until jquery ready
     if (window.jQuery) {
         method();
     } else {
-        setTimeout(function() { defer(method) }, 15);
+        setTimeout(function() { defer(method); }, 15);
     }
 }
 
 defer(function () { // load inital language
-    togglePython1()
-});
+    togglePython1();
+}); */
 
 
+if((document.querySelectorAll('.model-wrap').length !== 0) || (document.querySelectorAll('.tabs-new').length !== 0)) {
 
+    let tabLi = document.querySelectorAll('.tabs-new .tab-li');
+
+    if((document.querySelectorAll('.model-wrap').length !== 0)) {
+        tabLi = document.querySelectorAll('.model-wrap .tab-li');
+    } 
+    
+    let tabLiTopF = document.querySelectorAll('.top_tab_li'),
+        pythonInner = document.querySelectorAll('.python-inner');
+
+    tabLiTopF.forEach(e => {        
+        e.nextElementSibling.classList.add('active');
+    });
+    pythonInner.forEach(e => {
+        e.firstElementChild.classList.remove('language-python');
+    });
+
+    tabLi.forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            let tabAttribute = element.getAttribute('data-type'),
+                tabLiInner = element.parentNode.querySelectorAll('.tab-li'),
+                tabBoxInner = element.parentNode.parentNode.parentNode.querySelectorAll('.highlighter-rouge');
+            
+            //remove active class from NLU
+            tabBoxInner.forEach(item => {
+                item.classList.remove('active');
+                if(item.classList.contains('nlu-block')) {
+                    item.classList.remove('language-python');
+                }  
+                
+            });
+            tabLiInner.forEach(el => {
+                el.classList.remove('active');
+                el.classList.remove('code-selector-active');
+            });
+            element.classList.add('active');
+    
+            //add active class
+            switch (tabAttribute) {
+                case "python":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('language-python')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                    break;
+                case "scala":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('language-scala')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                  break;
+                  case "nlu":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('nlu-block')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                  break;
+                default:              
+              }
+        });
+    });
+}
+
+//Second tabs
+if(document.querySelectorAll('.tab-li-second').length !== 0) {
+    let tabLi = document.querySelectorAll('.tab-li-second');
+
+    tabLi.forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            let tabAttribute = element.getAttribute('data-type'),
+                tabLiInner = element.parentNode.querySelectorAll('.tab-li-second'),
+                tabBoxInner = element.parentNode.parentNode.parentNode.querySelectorAll('.tabs-box-medic-inner');
+            
+
+            //remove active class
+            tabBoxInner.forEach(item => {
+                item.classList.remove('active');
+            });
+            tabLiInner.forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+    
+            //add active class
+            switch (tabAttribute) {
+                case "python":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('language-python')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                    break;
+                case "scala":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('language-scala')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                  break;
+                default:              
+              }
+        });
+    });
+}
+
+//Third tabs
+if(document.querySelectorAll('.tab-li-inner').length !== 0) {
+
+    let tabLiSecond = document.querySelectorAll('.tab-li-inner'),
+        tabLiTop = document.querySelectorAll('.toptab-second'),
+        tabLi = document.querySelectorAll('.toptab-second p');
+
+
+    tabLiTop.forEach(e => {        
+        e.nextElementSibling.classList.add('active');
+    });
+
+    tabLi.forEach(e => {        
+        e.firstChild.classList.add('active');
+    });
+
+
+    tabLiSecond.forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            let tabAttributeSecond = element.getAttribute('data-type'),
+                tabLiInnerSecond = element.parentNode.querySelectorAll('.tab-li-inner'),
+                tabBoxInnerSecond = element.parentNode.parentNode.parentNode.querySelectorAll('.tabs-box-medic-inner-second');
+            
+            //remove active class
+            tabBoxInnerSecond.forEach(item => {
+                item.classList.remove('active');
+            });
+            tabLiInnerSecond.forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+    
+            //add active class
+            switch (tabAttributeSecond) {
+                case "medical":
+                    tabBoxInnerSecond.forEach(item => {
+                        if(item.classList.contains('language-medical')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                    break;
+                case "finance":
+                    tabBoxInnerSecond.forEach(item => {
+                        if(item.classList.contains('language-finance')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                  break;
+                case "legal":
+                tabBoxInnerSecond.forEach(item => {
+                    if(item.classList.contains('language-legal')) {
+                        item.classList.add('active');
+                    }                    
+                });
+                break;
+                default:              
+              }
+        });
+    });
+}
+
+//Forth tabs
+if(document.querySelectorAll('.tab-jsl').length !== 0) {
+    let tabLiForth = document.querySelectorAll('.tab-jsl');
+
+    tabLiForth.forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            let tabAttribute = element.getAttribute('data-type'),
+                tabLiInner = element.parentNode.querySelectorAll('.tab-jsl'),
+                tabBoxInner = element.parentNode.parentNode.parentNode.querySelectorAll('.python-inner');
+            
+
+            //remove active class
+            tabBoxInner.forEach(item => {
+                item.classList.remove('active');
+            });
+            tabLiInner.forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+    
+            //add active class
+            switch (tabAttribute) {
+                case "spark-nlp-jsl":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('python-johnsnowlabs')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                    break;
+                case "johnsnowlabs":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('python-spark-nlp-jsl')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                  break;
+                default:              
+              }
+        });
+    });
+}
 
 </script>
 
@@ -9969,7 +10211,7 @@ jQuery(document).ready(function($) {
       if (jQuery(window).width() <= 1023)
       {
         jQuery('.page__sidebar').toggleClass('open'); 
-      jQuery('.demopage-sidemenu').toggleClass('open');
+      jQuery('.demomenu').toggleClass('open');
       }
   });
   jQuery('.toc--ellipsis a').click(function(e) {
@@ -9983,7 +10225,7 @@ jQuery(document).ready(function($) {
 });
 
 /*TABS*/
-function openTabCall(cityName){
+/* function openTabCall(cityName){
   // Declare all variables
   var i, tabcontent, tablinks;
 
@@ -10006,10 +10248,10 @@ function openTabCall(cityName){
 function openTab(evt, cityName) {
   openTabCall(cityName);
   evt.currentTarget.className += " active";
-}
+} */
 
 /*OPen by URL*/
-$(document).ready(function () {  
+jQuery(document).ready(function () {  
   const tabName = (window.location.hash || '').replace('#', '');
   const tab = document.getElementById(tabName || 'opensource');
   if (tab) {
@@ -10017,20 +10259,69 @@ $(document).ready(function () {
   }
 });
 
-jQuery(document).ready(function(){
-	jQuery('.tab-item').click(function(event) {		
-		if (($(window).width() > 400) && ($(window).width() < 1199))
-	    {
-	    	jQuery('.tab-item').removeClass('open');
-	        jQuery(this).toggleClass('open');
-	    }
+//Accordion demos categories
+if(document.querySelector(".acc-top")) {
+  let acc = document.getElementsByClassName("acc-top"),
+    isResizeble = false;
+
+  if(!isResizeble && document.querySelector(".acc-top")) {
+      let accBody = document.querySelector('.acc-body li.active');
+      accBody.parentElement.style.maxHeight = accBody.parentElement.scrollHeight + 20 + "px";
+      accBody.parentElement.classList.add('open');
+      accBody.parentElement.previousElementSibling.classList.add('active');
+      isResizeble = true;
+  }
+
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+      panel.classList.remove('open');
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + 20 + "px";
+      panel.classList.add('open');
+    }
   });
-  
+}
+}
 
-});
+
+//Show more in demos description
+if(document.querySelector('.tab-description')) {
+  let tabDescription = document.querySelectorAll('.tab-description');
+
+  tabDescription.forEach(element => {
+    let tabDescriptionInner = element.querySelector('.tab-description-inner');
+    if(element.offsetHeight < tabDescriptionInner.offsetHeight) {
+      element.classList.add('big-descr');
+    }
+  });
+
+  let showMore = document.querySelectorAll('.show_more');
+
+  showMore.forEach(element => {
+    element.addEventListener("click", function(e) {
+      e.preventDefault();
+      this.parentElement.parentElement.classList.remove('big-descr');
+      this.parentElement.parentElement.classList.add('big-descr-close');
+    });
+  });
+}
 
 
- 
+//disable Colab link
+if(document.querySelector('.btn.disable')) {
+  let btnDisable = document.querySelectorAll('.btn.disable');
+
+  btnDisable.forEach(element => {
+    element.addEventListener("click", function(e) {
+      e.preventDefault();
+    });
+  });
+}
+
 
 </script></div></div>
     </div></div></div><script>(function() {
@@ -10229,8 +10520,10 @@ jQuery(document).ready(function(){
   window.Lazyload.js(SOURCES.jquery, function() {
     function toc(options) {
       var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
-        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        selectors = 'h1,h2,h3',  container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
         headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+        
 
       function setOptions(options) {
         var _options = options || {};
@@ -10272,7 +10565,8 @@ jQuery(document).ready(function(){
           $root.append($tocUl);
           $headings.each(function() {
             var $this = $(this);
-            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName')
+              .toLowerCase() + ' ' + $this.prop('className'))
               .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
           });
           $tocLi = $tocUl.children('li');

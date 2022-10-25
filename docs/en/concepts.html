@@ -9,7 +9,9 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-59JLR64');</script>
-<!-- End Google Tag Manager --><title>General Concepts</title><meta name="description" content="High Performance NLP with Apache Spark
+<!-- End Google Tag Manager --><title>General Concepts</title><meta property="og:title" content=""/>
+
+<meta name="description" content="High Performance NLP with Apache Spark
 ">
 <link rel="canonical" href="/docs/en/concepts"><link rel="alternate" type="application/rss+xml" title="Spark NLP" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ -->
 <!---->
@@ -521,7 +523,8 @@
     <li><a href="/docs">Documentation</a></li>
     <li>General Concepts</li>
   </ul>
-</div></div><header class="main-docs"><h1>General Concepts</h1></header><span class="split-space">&nbsp;</span>
+</div></div><header class="main-docs have_subtitle">
+          <h1>General Concepts</h1><div class="top-subtitle mont"></div></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="Edit on Github"
             href="https://github.com/johnsnowlabs/spark-nlp/tree/master/docs/en/concepts.md">
@@ -586,7 +589,7 @@
 <span class="nv">$ </span>conda create <span class="nt">-n</span> sparknlp <span class="nv">python</span><span class="o">=</span>3.7 <span class="nt">-y</span>
 <span class="nv">$ </span>conda activate sparknlp
 <span class="c"># spark-nlp by default is based on pyspark 3.x</span>
-<span class="nv">$ </span>pip <span class="nb">install </span>spark-nlp<span class="o">==</span>4.1.0 <span class="nv">pyspark</span><span class="o">==</span>3.2.1 jupyter
+<span class="nv">$ </span>pip <span class="nb">install </span>spark-nlp<span class="o">==</span>4.2.1 <span class="nv">pyspark</span><span class="o">==</span>3.2.1 jupyter
 <span class="nv">$ </span>jupyter notebook
 </code></pre></div>  </div>
 
@@ -609,10 +612,10 @@ You can checkout a demo application of the Explain Document ML pipeline here:</p
   <p>Explain Document ML (<strong>explain_document_ml</strong>) is a pretrained pipeline that does a little bit of everything NLP related. Let’s try it
 out in scala. Note that the first time you run the below code it might take longer since it downloads the pretrained pipeline from our servers!</p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -678,10 +681,10 @@ different components in a spark dataframe.</p>
   <p>Remember than when starting jupyter notebook from pyspark or when running the spark-shell for scala, a Spark Session is started in the background
 by default within the namespace ‘scala’.</p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sparknlp</span>
@@ -755,10 +758,10 @@ by default within the namespace ‘scala’.</p>
   <p>The output of the previous DataFrame was in terms of Annotation objects. This output is not really comfortable to deal with, as you can see by
 running the code:</p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">annotations_df</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="s">"token"</span><span class="p">).</span><span class="n">show</span><span class="p">(</span><span class="n">truncate</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
@@ -786,7 +789,7 @@ running the code:</p>
     <p>What if we want to deal with just the resulting annotations? We can use the <strong>Finisher</strong> annotator, retrieve the Explain Document ML pipeline, and add them together in a Spark ML Pipeline. Remember that pretrained pipelines expect the input column to be named “text”.</p>
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sparknlp</span> <span class="kn">import</span> <span class="n">Finisher</span>
 <span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="kn">import</span> <span class="n">Pipeline</span>
@@ -874,10 +877,10 @@ token or a lemma, as both are of type token.</p>
 
   <p>Since version 1.5.0 we are making necessary imports easy to reach, <strong>base._</strong> will include general Spark NLP transformers and concepts, while <strong>annotator._</strong> will include all annotators that we currently provide. We also need Spark ML pipelines.</p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sparknlp.base</span> <span class="kn">import</span> <span class="o">*</span>
@@ -900,10 +903,10 @@ annotated. There is a special <strong>transformer</strong> that does this for us
 the <strong>DocumentAssembler</strong>, it creates the first annotation of type
 <strong>Document</strong> which may be used by annotators down the road.</p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">documentAssembler</span> <span class="o">=</span> <span class="n">DocumentAssembler</span><span class="p">()</span> \
@@ -924,10 +927,10 @@ the <strong>DocumentAssembler</strong>, it creates the first annotation of type
   <p>In this quick example, we now proceed to identify the sentences in the input document. SentenceDetector requires a Document annotation,
 which is provided by the DocumentAssembler output, and it’s itself a Document type token. The Tokenizer requires a Document annotation type. That means it works both with DocumentAssembler or SentenceDetector output. In the following example we use the sentence output.</p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sentenceDetector</span> <span class="o">=</span> <span class="n">SentenceDetector</span><span class="p">()</span> \
@@ -967,10 +970,10 @@ which is provided by the DocumentAssembler output, and it’s itself a Document 
 
   <p>At the end of each pipeline or any stage that was done by Spark NLP, you may want to get results out whether onto another pipeline or simply write them on disk. The <code class="language-plaintext highlighter-rouge">Finisher</code> annotator helps you to clean the metadata (if it’s set to true) and output the results into an array:</p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">finisher</span> <span class="o">=</span> <span class="n">Finisher</span><span class="p">()</span> \
@@ -1004,10 +1007,10 @@ which is provided by the DocumentAssembler output, and it’s itself a Document 
 <p>Now we want to put all this together and retrieve the results, we use a Pipeline for this.  We use the same data in fit() that we will use in
 transform since none of the pipeline stages have a training stage.</p>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
   <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">()</span> \
@@ -1060,10 +1063,10 @@ amounts of data. This means, we do not input a Spark Dataframe, but a string or 
 Pipelines, you need to input an already trained (fit) Spark ML Pipeline.
 It’s transform() stage is converted into annotate() instead.</p>
 
-<div class="tabs-box">
+<div class="tabs-box tabs-new">
 
   <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
   <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sparknlp.base</span> <span class="kn">import</span> <span class="n">LightPipeline</span>
@@ -1160,10 +1163,10 @@ converting them into an AnnotatorModel.</p>
 
   <p><strong>Example:</strong></p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sparknlp.base</span> <span class="kn">import</span> <span class="o">*</span>
@@ -1187,10 +1190,10 @@ seamlessly so it is important to have this concept handy. Once a
 
   <p><strong>Example:</strong></p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="kn">import</span> <span class="n">Pipeline</span>
@@ -1213,10 +1216,10 @@ maximum). To use them, simply plug in a trained (fitted) pipeline.</p>
 
   <p><strong>Example:</strong></p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sparknlp.base</span> <span class="kn">import</span> <span class="n">LightPipeline</span>
@@ -1251,10 +1254,10 @@ same intention.</p>
 
   <p><strong>Example:</strong></p>
 
-  <div class="tabs-box">
+  <div class="tabs-box tabs-new">
 
     <div class="top_tab_li">   
-    <button class="tab-li code-selector-active python-button">Python</button><button class="tab-li code-selector-un-active scala-button">Scala</button>
+    <p><button data-type="python" class="tab-li tab-li-second active">Python</button><button data-type="scala" class="tab-li tab-li-second">Scala</button></p>
 </div>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sparknlp.annotator</span> <span class="kn">import</span> <span class="o">*</span>
@@ -1299,7 +1302,7 @@ better performance.</p>
 
 <script>
 
-
+/* 
 jQuery(document).ready(function(){  
     $( ".scala-button" ).click(function() {
         $(this).closest( ".tabs-box" ).find(".scala-button").removeClass('code-selector-un-active').addClass( "code-selector-active" );        
@@ -1339,34 +1342,248 @@ jQuery(document).ready(function(){
         $(this).closest( ".tabs-box" ).find( ".language-python, .language-scala" ).hide();
         $(this).closest( ".tabs-box" ).find( ".nlu-block" ).show();
     });
-});
+}); */
 
-function togglePython1() {
+/* function togglePython1() {
 
     //set current button to active class and remove unactive class
     $( ".python-button" ).addClass( "code-selector-active" );
 
 
     //toggle language snippets
-    $( ".tabs-box .language-python" ).show() 
-    $( ".tabs-box .nlu-block" ).hide()
-    $( ".tabs-box .language-scala" ).hide()
+    $( ".tabs-box .language-python" ).show();
+    $( ".tabs-box .nlu-block" ).hide();
+    $( ".tabs-box .language-scala" ).hide();
 }
 
 function defer(method) { //wait until jquery ready
     if (window.jQuery) {
         method();
     } else {
-        setTimeout(function() { defer(method) }, 15);
+        setTimeout(function() { defer(method); }, 15);
     }
 }
 
 defer(function () { // load inital language
-    togglePython1()
-});
+    togglePython1();
+}); */
 
 
+if((document.querySelectorAll('.model-wrap').length !== 0) || (document.querySelectorAll('.tabs-new').length !== 0)) {
 
+    let tabLi = document.querySelectorAll('.tabs-new .tab-li');
+
+    if((document.querySelectorAll('.model-wrap').length !== 0)) {
+        tabLi = document.querySelectorAll('.model-wrap .tab-li');
+    } 
+    
+    let tabLiTopF = document.querySelectorAll('.top_tab_li'),
+        pythonInner = document.querySelectorAll('.python-inner');
+
+    tabLiTopF.forEach(e => {        
+        e.nextElementSibling.classList.add('active');
+    });
+    pythonInner.forEach(e => {
+        e.firstElementChild.classList.remove('language-python');
+    });
+
+    tabLi.forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            let tabAttribute = element.getAttribute('data-type'),
+                tabLiInner = element.parentNode.querySelectorAll('.tab-li'),
+                tabBoxInner = element.parentNode.parentNode.parentNode.querySelectorAll('.highlighter-rouge');
+            
+            //remove active class from NLU
+            tabBoxInner.forEach(item => {
+                item.classList.remove('active');
+                if(item.classList.contains('nlu-block')) {
+                    item.classList.remove('language-python');
+                }  
+                
+            });
+            tabLiInner.forEach(el => {
+                el.classList.remove('active');
+                el.classList.remove('code-selector-active');
+            });
+            element.classList.add('active');
+    
+            //add active class
+            switch (tabAttribute) {
+                case "python":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('language-python')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                    break;
+                case "scala":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('language-scala')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                  break;
+                  case "nlu":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('nlu-block')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                  break;
+                default:              
+              }
+        });
+    });
+}
+
+//Second tabs
+if(document.querySelectorAll('.tab-li-second').length !== 0) {
+    let tabLi = document.querySelectorAll('.tab-li-second');
+
+    tabLi.forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            let tabAttribute = element.getAttribute('data-type'),
+                tabLiInner = element.parentNode.querySelectorAll('.tab-li-second'),
+                tabBoxInner = element.parentNode.parentNode.parentNode.querySelectorAll('.tabs-box-medic-inner');
+            
+
+            //remove active class
+            tabBoxInner.forEach(item => {
+                item.classList.remove('active');
+            });
+            tabLiInner.forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+    
+            //add active class
+            switch (tabAttribute) {
+                case "python":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('language-python')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                    break;
+                case "scala":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('language-scala')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                  break;
+                default:              
+              }
+        });
+    });
+}
+
+//Third tabs
+if(document.querySelectorAll('.tab-li-inner').length !== 0) {
+
+    let tabLiSecond = document.querySelectorAll('.tab-li-inner'),
+        tabLiTop = document.querySelectorAll('.toptab-second'),
+        tabLi = document.querySelectorAll('.toptab-second p');
+
+
+    tabLiTop.forEach(e => {        
+        e.nextElementSibling.classList.add('active');
+    });
+
+    tabLi.forEach(e => {        
+        e.firstChild.classList.add('active');
+    });
+
+
+    tabLiSecond.forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            let tabAttributeSecond = element.getAttribute('data-type'),
+                tabLiInnerSecond = element.parentNode.querySelectorAll('.tab-li-inner'),
+                tabBoxInnerSecond = element.parentNode.parentNode.parentNode.querySelectorAll('.tabs-box-medic-inner-second');
+            
+            //remove active class
+            tabBoxInnerSecond.forEach(item => {
+                item.classList.remove('active');
+            });
+            tabLiInnerSecond.forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+    
+            //add active class
+            switch (tabAttributeSecond) {
+                case "medical":
+                    tabBoxInnerSecond.forEach(item => {
+                        if(item.classList.contains('language-medical')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                    break;
+                case "finance":
+                    tabBoxInnerSecond.forEach(item => {
+                        if(item.classList.contains('language-finance')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                  break;
+                case "legal":
+                tabBoxInnerSecond.forEach(item => {
+                    if(item.classList.contains('language-legal')) {
+                        item.classList.add('active');
+                    }                    
+                });
+                break;
+                default:              
+              }
+        });
+    });
+}
+
+//Forth tabs
+if(document.querySelectorAll('.tab-jsl').length !== 0) {
+    let tabLiForth = document.querySelectorAll('.tab-jsl');
+
+    tabLiForth.forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            let tabAttribute = element.getAttribute('data-type'),
+                tabLiInner = element.parentNode.querySelectorAll('.tab-jsl'),
+                tabBoxInner = element.parentNode.parentNode.parentNode.querySelectorAll('.python-inner');
+            
+
+            //remove active class
+            tabBoxInner.forEach(item => {
+                item.classList.remove('active');
+            });
+            tabLiInner.forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+    
+            //add active class
+            switch (tabAttribute) {
+                case "spark-nlp-jsl":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('python-johnsnowlabs')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                    break;
+                case "johnsnowlabs":
+                    tabBoxInner.forEach(item => {
+                        if(item.classList.contains('python-spark-nlp-jsl')) {
+                            item.classList.add('active');
+                        }                    
+                    });
+                  break;
+                default:              
+              }
+        });
+    });
+}
 
 </script>
 
@@ -1514,7 +1731,7 @@ jQuery(document).ready(function($) {
       if (jQuery(window).width() <= 1023)
       {
         jQuery('.page__sidebar').toggleClass('open'); 
-      jQuery('.demopage-sidemenu').toggleClass('open');
+      jQuery('.demomenu').toggleClass('open');
       }
   });
   jQuery('.toc--ellipsis a').click(function(e) {
@@ -1528,7 +1745,7 @@ jQuery(document).ready(function($) {
 });
 
 /*TABS*/
-function openTabCall(cityName){
+/* function openTabCall(cityName){
   // Declare all variables
   var i, tabcontent, tablinks;
 
@@ -1551,10 +1768,10 @@ function openTabCall(cityName){
 function openTab(evt, cityName) {
   openTabCall(cityName);
   evt.currentTarget.className += " active";
-}
+} */
 
 /*OPen by URL*/
-$(document).ready(function () {  
+jQuery(document).ready(function () {  
   const tabName = (window.location.hash || '').replace('#', '');
   const tab = document.getElementById(tabName || 'opensource');
   if (tab) {
@@ -1562,20 +1779,69 @@ $(document).ready(function () {
   }
 });
 
-jQuery(document).ready(function(){
-	jQuery('.tab-item').click(function(event) {		
-		if (($(window).width() > 400) && ($(window).width() < 1199))
-	    {
-	    	jQuery('.tab-item').removeClass('open');
-	        jQuery(this).toggleClass('open');
-	    }
+//Accordion demos categories
+if(document.querySelector(".acc-top")) {
+  let acc = document.getElementsByClassName("acc-top"),
+    isResizeble = false;
+
+  if(!isResizeble && document.querySelector(".acc-top")) {
+      let accBody = document.querySelector('.acc-body li.active');
+      accBody.parentElement.style.maxHeight = accBody.parentElement.scrollHeight + 20 + "px";
+      accBody.parentElement.classList.add('open');
+      accBody.parentElement.previousElementSibling.classList.add('active');
+      isResizeble = true;
+  }
+
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+      panel.classList.remove('open');
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + 20 + "px";
+      panel.classList.add('open');
+    }
   });
-  
+}
+}
 
-});
+
+//Show more in demos description
+if(document.querySelector('.tab-description')) {
+  let tabDescription = document.querySelectorAll('.tab-description');
+
+  tabDescription.forEach(element => {
+    let tabDescriptionInner = element.querySelector('.tab-description-inner');
+    if(element.offsetHeight < tabDescriptionInner.offsetHeight) {
+      element.classList.add('big-descr');
+    }
+  });
+
+  let showMore = document.querySelectorAll('.show_more');
+
+  showMore.forEach(element => {
+    element.addEventListener("click", function(e) {
+      e.preventDefault();
+      this.parentElement.parentElement.classList.remove('big-descr');
+      this.parentElement.parentElement.classList.add('big-descr-close');
+    });
+  });
+}
 
 
- 
+//disable Colab link
+if(document.querySelector('.btn.disable')) {
+  let btnDisable = document.querySelectorAll('.btn.disable');
+
+  btnDisable.forEach(element => {
+    element.addEventListener("click", function(e) {
+      e.preventDefault();
+    });
+  });
+}
+
 
 </script></div></div>
     </div></div></div><script>(function() {
@@ -1774,8 +2040,10 @@ jQuery(document).ready(function(){
   window.Lazyload.js(SOURCES.jquery, function() {
     function toc(options) {
       var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
-        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        selectors = 'h1,h2,h3',  container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
         headingsPos, scrolling = false, hasRendered = false, hasInit = false;
+
+        
 
       function setOptions(options) {
         var _options = options || {};
@@ -1817,7 +2085,8 @@ jQuery(document).ready(function(){
           $root.append($tocUl);
           $headings.each(function() {
             var $this = $(this);
-            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName')
+              .toLowerCase() + ' ' + $this.prop('className'))
               .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
           });
           $tocLi = $tocUl.children('li');
