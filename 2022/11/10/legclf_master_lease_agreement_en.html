@@ -9,10 +9,10 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-59JLR64');</script>
-<!-- End Google Tag Manager --><title>Acquisitions / Subsidiaries Relation Extraction (sm, Bidirectional)</title><meta property="og:title" content=""/>
+<!-- End Google Tag Manager --><title>Legal Master Lease Agreement Document Classifier (Longformer)</title><meta property="og:title" content=""/>
 
-<meta name="description" content="DescriptionThis model is a sm model without meaningful directions in the relations (the model was not trained to understand if the direction of the relation is from left to right or right to left).There are bigger models in Models Hub trained also with directed relationships.The aim of this model is to retrieve acqu...">
-<link rel="canonical" href="/2022/09/08/finre_acquisitions_subsidiaries_en.html"><link rel="alternate" type="application/rss+xml" title="Spark NLP" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ -->
+<meta name="description" content="DescriptionThe legclf_master_lease_agreement model is a Legal Longformer Document Classifier to classify if the document belongs to the class master-lease-agreement (check Lawinsider for similar document type classification) or not (Binary Classification).Longformers have a restriction on 4096 tokens, so only the fi...">
+<link rel="canonical" href="/2022/11/10/legclf_master_lease_agreement_en.html"><link rel="alternate" type="application/rss+xml" title="Spark NLP" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ -->
 <!---->
 <!-- <link rel="apple-touch-icon" sizes="180x180" href="/fav.ico"> -->
 
@@ -408,30 +408,30 @@
 
 <!-- end custom main top snippet --><article><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><div class="article__header"><div class="header-author"><div class="article__info clearfix"><div class="left-col">
             <a class="edit-on-github-btn" target="_blank" rel="alternate"
-               href="https://github.com/johnsnowlabs/spark-nlp/tree/master/docs/_posts/josejuanmartinez/2022-09-08-finre_acquisitions_subsidiaries_en.md">
+               href="https://github.com/johnsnowlabs/spark-nlp/tree/master/docs/_posts/gokhanturer/2022-11-10-legclf_master_lease_agreement_en.md">
               <span class="fab fa-github"></span>
               <span class="edit-on-github-label">Edit on GitHub</span>
             </a>
-        </div><ul class="right-col menu"><li><i class="far fa-user"></i> <span>John Snow Labs</span></li><li><i class="far fa-calendar-alt"></i> <span>Sep 08, 2022</span>
-            </li></ul></div><meta itemprop="author" content=""/><meta itemprop="datePublished" content="2022-09-08T00:00:00+00:00"></div><header class="main-docs have_subtitle">
-          <h1>Acquisitions / Subsidiaries Relation Extraction (sm, Bidirectional)</h1><div class="top-subtitle mont"></div></header></div><meta itemprop="headline" content="Acquisitions / Subsidiaries Relation Extraction (sm, Bidirectional)"><div class="article__info tags_box clearfix"><ul class="left-col menu"><li>en</li><li>finance</li><li>re</li><li>relations</li><li>acquisitions</li><li>subsidiaries</li><li>licensed</li></ul></div><meta itemprop="author" content=""/><meta itemprop="datePublished" content="2022-09-08T00:00:00+00:00">
-    <meta itemprop="keywords" content="en,finance,re,relations,acquisitions,subsidiaries,licensed"><div class="js-article-content"><div class="model-wrap"><div class="layout--article"><!-- start custom article top snippet -->
+        </div><ul class="right-col menu"><li><i class="far fa-user"></i> <span>John Snow Labs</span></li><li><i class="far fa-calendar-alt"></i> <span>Nov 10, 2022</span>
+            </li></ul></div><meta itemprop="author" content=""/><meta itemprop="datePublished" content="2022-11-10T00:00:00+00:00"></div><header class="main-docs have_subtitle">
+          <h1>Legal Master Lease Agreement Document Classifier (Longformer)</h1><div class="top-subtitle mont"></div></header></div><meta itemprop="headline" content="Legal Master Lease Agreement Document Classifier (Longformer)"><div class="article__info tags_box clearfix"><ul class="left-col menu"><li>en</li><li>legal</li><li>classification</li><li>agreement</li><li>master_lease</li><li>licensed</li></ul></div><meta itemprop="author" content=""/><meta itemprop="datePublished" content="2022-11-10T00:00:00+00:00">
+    <meta itemprop="keywords" content="en,legal,classification,agreement,master_lease,licensed"><div class="js-article-content"><div class="model-wrap"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet --><div class="article__content" itemprop="articleBody"><h2 id="description">Description</h2>
 
-<p>This model is a <code class="language-plaintext highlighter-rouge">sm</code> model without meaningful directions in the relations (the model was not trained to understand if the direction of the relation is from left to right or right to left).</p>
+<p>The <code class="language-plaintext highlighter-rouge">legclf_master_lease_agreement</code> model is a Legal Longformer Document Classifier to classify if the document belongs to the class <code class="language-plaintext highlighter-rouge">master-lease-agreement</code> (check <a href="https://www.lawinsider.com/tags">Lawinsider</a> for similar document type classification) or not (Binary Classification).</p>
 
-<p>There are bigger models in Models Hub trained also with directed relationships.</p>
+<p>Longformers have a restriction on 4096 tokens, so only the first 4096 tokens will be taken into account. We have realised that for the big majority of the documents in legal corpora, if they are clean and only contain the legal document without any extra information before, 4096 is enough to perform Document Classification.</p>
 
-<p>The aim of this model is to retrieve acquisition or subsidiary relationships between Organizations, included when the acquisition was carried out (“was_acquired”) and by whom (“was_acquired_by”). Subsidiaries are tagged with the relationship “is_subsidiary_of”.</p>
+<p>If not, let us know and we can carry out another approach for you: getting chunks of 4096 tokens and average the embeddings, training with the averaged version, what means all document will be taken into account. But this theoretically should not be required.</p>
 
 <h2 id="predicted-entities">Predicted Entities</h2>
 
-<p><code class="language-plaintext highlighter-rouge">was_acquired</code>, <code class="language-plaintext highlighter-rouge">was_acquired_by</code>, <code class="language-plaintext highlighter-rouge">is_subsidiary_of</code></p>
+<p><code class="language-plaintext highlighter-rouge">master-lease-agreement</code>, <code class="language-plaintext highlighter-rouge">other</code></p>
 
-<p class="btn-box"><a href="https://demo.johnsnowlabs.com/finance/FINRE_ACQUISITIONS/" class="button button-orange">Live Demo</a>
+<p class="btn-box"><button class="button button-orange" disabled="">Live Demo</button>
 <button class="button button-orange" disabled="">Open in Colab</button>
-<a href="https://s3.amazonaws.com/auxdata.johnsnowlabs.com/finance/models/finre_acquisitions_subsidiaries_en_1.0.0_3.2_1662641362605.zip" class="button button-orange button-orange-trans arr button-icon">Download</a></p>
+<a href="https://s3.amazonaws.com/auxdata.johnsnowlabs.com/legal/models/legclf_master_lease_agreement_en_1.0.0_3.0_1668117131869.zip" class="button button-orange button-orange-trans arr button-icon">Download</a></p>
 
 <h2 id="how-to-use">How to use</h2>
 
@@ -440,107 +440,56 @@
     <p><button data-type="python" class="tab-li code-selector-active python-button">Python</button><button data-type="scala" class="tab-li code-selector-un-active scala-button">Scala</button><button data-type="nlu" class="tab-li code-selector-un-active nlu-button">NLU</button></p>
 </div>
 
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">documentAssembler</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">DocumentAssembler</span><span class="p">()</span>\
-        <span class="p">.</span><span class="n">setInputCol</span><span class="p">(</span><span class="s">"text"</span><span class="p">)</span>\
-        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"document"</span><span class="p">)</span>
-
-<span class="n">sentence_detector</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">SentenceDetectorDLModel</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"sentence_detector_dl"</span><span class="p">,</span> <span class="s">"en"</span><span class="p">)</span>\
-        <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"document"</span><span class="p">])</span>\
-        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"sentence"</span><span class="p">)</span>
-        
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">document_assembler</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">DocumentAssembler</span><span class="p">()</span>\
+     <span class="p">.</span><span class="n">setInputCol</span><span class="p">(</span><span class="s">"text"</span><span class="p">)</span>\
+     <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"document"</span><span class="p">)</span>\
+     
 <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">Tokenizer</span><span class="p">()</span>\
-        <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"sentence"</span><span class="p">])</span>\
-        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"token"</span><span class="p">)</span>
+     <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"document"</span><span class="p">])</span>\
+     <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"token"</span><span class="p">)</span>
+     
+<span class="n">embeddings</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">LongformerEmbeddings</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"legal_longformer_base"</span><span class="p">,</span> <span class="s">"en"</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">setInputCols</span><span class="p">(</span><span class="s">"document"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"embeddings"</span><span class="p">)</span>
+    
+<span class="n">sentence_embeddings</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">SentenceEmbeddings</span><span class="p">()</span>\
+    <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"document"</span><span class="p">,</span> <span class="s">"embeddings"</span><span class="p">])</span>\
+    <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"sentence_embeddings"</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">setPoolingStrategy</span><span class="p">(</span><span class="s">"AVERAGE"</span><span class="p">)</span>
+    
+<span class="n">doc_classifier</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">ClassifierDLModel</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"legclf_master_lease_agreement"</span><span class="p">,</span> <span class="s">"en"</span><span class="p">,</span> <span class="s">"legal/models"</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"sentence_embeddings"</span><span class="p">])</span>\
+    <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"category"</span><span class="p">)</span>
+    
+<span class="n">nlpPipeline</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">Pipeline</span><span class="p">(</span><span class="n">stages</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">document_assembler</span><span class="p">,</span> 
+    <span class="n">tokenizer</span><span class="p">,</span>
+    <span class="n">embeddings</span><span class="p">,</span>
+    <span class="n">sentence_embeddings</span><span class="p">,</span>
+    <span class="n">doc_classifier</span><span class="p">])</span>
+ 
+<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">createDataFrame</span><span class="p">([[</span><span class="s">"YOUR TEXT HERE"</span><span class="p">]]).</span><span class="n">toDF</span><span class="p">(</span><span class="s">"text"</span><span class="p">)</span>
 
-<span class="c1"># ===========
-# This is needed only to filter relation pairs using finance.RENerChunksFilter (see below)
-# ===========
-</span><span class="n">pos</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">PerceptronModel</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"pos_anc"</span><span class="p">,</span> <span class="s">'en'</span><span class="p">)</span>\
-          <span class="p">.</span><span class="n">setInputCols</span><span class="p">(</span><span class="s">"sentence"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">)</span>\
-          <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"pos"</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">nlpPipeline</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
-<span class="n">dependency_parser</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">DependencyParserModel</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"dependency_conllu"</span><span class="p">,</span> <span class="s">"en"</span><span class="p">)</span> \
-    <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"sentence"</span><span class="p">,</span> <span class="s">"pos"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">])</span> \
-    <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"dependencies"</span><span class="p">)</span>
-<span class="c1"># ===========
-</span>
-<span class="c1"># ===========
-# USE ANY NERMODEL WHICH RETRIEVES ORG
-# We recommend `finner_orgs_prods_alias` because it retrieves also companies Aliases (as "AWS" in the sentence "Amazon Web Services (AWS)")
-# ===========
-</span><span class="n">bert_embeddings</span><span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">BertEmbeddings</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"bert_embeddings_sec_bert_base"</span><span class="p">,</span><span class="s">"en"</span><span class="p">)</span>\
-        <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"sentence"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">])</span>\
-        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"bert_embeddings"</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
-<span class="n">ner_model_org</span><span class="o">=</span> <span class="n">finance</span><span class="p">.</span><span class="n">NerModel</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"finner_orgs_prods_alias"</span><span class="p">,</span> <span class="s">"en"</span><span class="p">,</span> <span class="s">"finance/models"</span><span class="p">)</span>\
-        <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"sentence"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">,</span> <span class="s">"bert_embeddings"</span><span class="p">])</span>\
-        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"ner_cuad"</span><span class="p">)</span>
-
-<span class="n">ner_converter_org</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">NerConverter</span><span class="p">()</span>\
-        <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"sentence"</span><span class="p">,</span><span class="s">"token"</span><span class="p">,</span><span class="s">"ner_cuad"</span><span class="p">])</span>\
-        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"ner_chunk_org"</span><span class="p">)</span>\
-        <span class="p">.</span><span class="n">setWhiteList</span><span class="p">([</span><span class="s">'ORG'</span><span class="p">,</span> <span class="s">'PRODUCT'</span><span class="p">,</span> <span class="s">'ALIAS'</span><span class="p">])</span>
-
-<span class="n">ner_model_dates</span> <span class="o">=</span> <span class="n">finance</span><span class="p">.</span><span class="n">NerModel</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">'finner_sec_dates'</span><span class="p">,</span> <span class="s">'en'</span><span class="p">,</span> <span class="s">'finance/models'</span><span class="p">)</span>\
-        <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"sentence"</span><span class="p">,</span> <span class="s">"token"</span><span class="p">,</span> <span class="s">"bert_embeddings"</span><span class="p">])</span>\
-        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"ner_dates"</span><span class="p">)</span>
-
-<span class="n">ner_converter_dates</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">.</span><span class="n">NerConverter</span><span class="p">()</span>\
-        <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"sentence"</span><span class="p">,</span><span class="s">"token"</span><span class="p">,</span><span class="s">"ner_dates"</span><span class="p">])</span>\
-        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"ner_chunk_dates"</span><span class="p">)</span>\
-
-<span class="n">chunk_merger</span> <span class="o">=</span> <span class="n">finance</span><span class="p">.</span><span class="n">ChunkMergeApproach</span><span class="p">()</span>\
-        <span class="p">.</span><span class="n">setInputCols</span><span class="p">(</span><span class="s">'ner_chunk_org'</span><span class="p">,</span> <span class="s">"ner_chunk_dates"</span><span class="p">)</span>\
-        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">'ner_chunk'</span><span class="p">)</span>
-
-<span class="n">re_ner_chunk_filter</span> <span class="o">=</span> <span class="n">finance</span><span class="p">.</span><span class="n">RENerChunksFilter</span><span class="p">()</span> \
-    <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"ner_chunk"</span><span class="p">,</span> <span class="s">"dependencies"</span><span class="p">])</span>\
-    <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"re_ner_chunk"</span><span class="p">)</span>\
-    <span class="p">.</span><span class="n">setRelationPairs</span><span class="p">([</span><span class="s">"DATE-ORG"</span><span class="p">,</span> <span class="s">"DATE-ALIAS"</span><span class="p">,</span> <span class="s">"DATE-PRODUCT"</span><span class="p">,</span> <span class="s">"ORG-ORG"</span><span class="p">])</span>
-
-<span class="n">re_Model</span> <span class="o">=</span> <span class="n">finance</span><span class="p">.</span><span class="n">RelationExtractionDLModel</span><span class="p">.</span><span class="n">pretrained</span><span class="p">(</span><span class="s">"finre_acquisitions_subsidiaries"</span><span class="p">,</span> <span class="s">"en"</span><span class="p">,</span> <span class="s">"finance/models"</span><span class="p">)</span>\
-        <span class="p">.</span><span class="n">setInputCols</span><span class="p">([</span><span class="s">"re_ner_chunk"</span><span class="p">,</span> <span class="s">"sentence"</span><span class="p">])</span>\
-        <span class="p">.</span><span class="n">setOutputCol</span><span class="p">(</span><span class="s">"relations"</span><span class="p">)</span>\
-        <span class="p">.</span><span class="n">setPredictionThreshold</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">stages</span><span class="o">=</span><span class="p">[</span>
-        <span class="n">documentAssembler</span><span class="p">,</span>
-        <span class="n">sentence_detector</span><span class="p">,</span>
-        <span class="n">tokenizer</span><span class="p">,</span>
-        <span class="n">bert_embeddings</span><span class="p">,</span>
-        <span class="n">ner_model_org</span><span class="p">,</span>
-        <span class="n">ner_converter_org</span><span class="p">,</span>      
-        <span class="n">ner_model_dates</span><span class="p">,</span>
-        <span class="n">ner_converter_dates</span><span class="p">,</span>
-        <span class="n">pos</span><span class="p">,</span>
-        <span class="n">dependency_parser</span><span class="p">,</span>        
-        <span class="n">chunk_merger</span><span class="p">,</span>
-        <span class="n">re_ner_chunk_filter</span><span class="p">,</span>
-        <span class="n">re_Model</span>
-        <span class="p">])</span>
-<span class="n">empty_df</span> <span class="o">=</span> <span class="n">spark</span><span class="p">.</span><span class="n">createDataFrame</span><span class="p">([[</span><span class="s">''</span><span class="p">]]).</span><span class="n">toDF</span><span class="p">(</span><span class="s">"text"</span><span class="p">)</span>
-
-<span class="n">re_model</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">empty_df</span><span class="p">)</span>
-
-<span class="n">light_model</span> <span class="o">=</span> <span class="n">LightPipeline</span><span class="p">(</span><span class="n">re_model</span><span class="p">)</span>
-
-<span class="n">light_model</span><span class="p">.</span><span class="n">fullAnnotate</span><span class="p">(</span><span class="s">"""On January 15, 2020, Cadence acquired all of the outstanding equity of AWR Corporation ("AWR"). On February 6, 2020, Cadence also acquired all of the outstanding equity of Integrand Software, Inc. ("Integrand")."""</span><span class="p">)</span>
 </code></pre></div>  </div>
 
 </div>
 
 <h2 id="results">Results</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>relation        entity1 entity1_begin	entity1_end   chunk1             entity2     entity2_begin   entity2_end  chunk2                    confidence
-was_acquired	DATE	3               18            January 15, 2020   ORG	     21	             27           Cadence                   0.99962
-was_acquired	DATE	3               18            January 15, 2020   ORG	     71	             85           AWR Corporation           0.99949
-was_acquired	DATE	3               18            January 15, 2020   ALIAS	     89	             91           AWR                       0.99967
-was_acquired_by ORG     21              27            Cadence            ORG	     71	             85           AWR Corporation           0.79408
-was_acquired	DATE	99              114           February 6, 2020   ORG	     117             123          Cadence                   0.99968
-was_acquired	DATE	99              114           February 6, 2020   ORG	     172             195          Integrand Software, Inc.  0.99955
-was_acquired	DATE	99              114           February 6, 2020   ALIAS	     199             207          Integrand                 0.99918
-was_acquired_by ORG     117             123           Cadence            ORG	     172             195          Integrand Software, Inc.  0.64350
-...     
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
++-------+
+| result|
++-------+
+|[master-lease-agreement]|
+|[other]|
+|[other]|
+|[master-lease-agreement]|
+
 </code></pre></div></div>
 
 <h2 class="model-param" id="model-information">Model Information</h2>
@@ -549,15 +498,11 @@ was_acquired_by ORG     117             123           Cadence            ORG	   
   <tbody>
     <tr>
       <td>Model Name:</td>
-      <td>finre_acquisitions_subsidiaries</td>
-    </tr>
-    <tr>
-      <td>Type:</td>
-      <td>finance</td>
+      <td>legclf_master_lease_agreement</td>
     </tr>
     <tr>
       <td>Compatibility:</td>
-      <td>Spark NLP for Finance 1.0.0+</td>
+      <td>Legal NLP 1.0.0+</td>
     </tr>
     <tr>
       <td>License:</td>
@@ -568,31 +513,43 @@ was_acquired_by ORG     117             123           Cadence            ORG	   
       <td>Official</td>
     </tr>
     <tr>
+      <td>Input Labels:</td>
+      <td>[sentence_embeddings]</td>
+    </tr>
+    <tr>
+      <td>Output Labels:</td>
+      <td>[class]</td>
+    </tr>
+    <tr>
       <td>Language:</td>
       <td>en</td>
     </tr>
     <tr>
       <td>Size:</td>
-      <td>405.9 MB</td>
+      <td>21.4 MB</td>
     </tr>
   </tbody>
 </table>
 
 <h2 id="references">References</h2>
 
-<p>Manual annotations on CUAD dataset, 10K filings and Wikidata</p>
+<p>Legal documents, scrapped from the Internet, and classified in-house + SEC documents + Lawinsider categorization</p>
 
 <h2 id="benchmarking">Benchmarking</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>label               Recall    Precision    F1       Support
-is_subsidiary_of    0.836     0.924        0.878    146
-no_rel              0.968     0.932        0.950    684
-was_acquired        0.936     0.944        0.940    218
-was_acquired_by     0.857     0.911        0.883    168
-Avg.                0.899     0.928        0.913     -
-Weighted-Avg.       0.931     0.931        0.930     -
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+                        precision    recall  f1-score   support
+
+master-lease-agreement       0.96      0.90      0.93        30
+                 other       0.96      0.98      0.97        66
+
+              accuracy                           0.96        96
+             macro avg       0.96      0.94      0.95        96
+          weighted avg       0.96      0.96      0.96        96
+
+
 </code></pre></div></div>
-</div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2022-09-08T00:00:00+00:00"><!-- start custom article footer snippet -->
+</div><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2022-11-10T00:00:00+00:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet --></footer>
 
@@ -931,7 +888,7 @@ hr.code-selector-underlie {
 
 }
 
-</style><div class="article__section-navigator clearfix"><div class="previous nav_link"><span>PREVIOUS</span><a href="/2022/09/08/finel_names2tickers_en.html">Resolver Company Names to Tickers</a></div><div class="next nav_link"><span>NEXT</span><a href="/2022/09/09/finassertiondl_past_roles_en.html">Identify Job Experiences in the Past</a></div></div></div>
+</style><div class="article__section-navigator clearfix"><div class="previous nav_link"><span>PREVIOUS</span><a href="/2022/11/10/legclf_limited_partnership_agreement_en.html">Legal Limited Partnership Agreement Document Classifier (Longformer)</a></div><div class="next nav_link"><span>NEXT</span><a href="/2022/11/10/legclf_stockholder_agreement_en.html">Legal Stockholder Agreement Document Classifier (Longformer)</a></div></div></div>
 
 </div>
 </div>
